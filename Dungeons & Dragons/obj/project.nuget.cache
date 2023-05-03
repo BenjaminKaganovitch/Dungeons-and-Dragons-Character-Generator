@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YKoGnFyiiALIAU7BgBg5VGW9DhJ+rfn7lDI8DQJzpUs5xzb6OpUHLCWXWqW4k0y14FpB/wxoTjKN0XOb7BQ9KA==",
+  "dgSpecHash": "LyyjKCIfrxMRmWRAg3QdgM1PQneSJa3/HtUZ6YbmnCW8OQoaP6I3Kb5ik8tEdJOt5yXBUFbc+gB4+qzKNDf+rw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Benjamin\\Music\\Dungeons & Dragons\\Dungeons & Dragons.csproj",
+  "projectFilePath": "C:\\Users\\Benjamin\\Pictures\\ProjectDD\\Dungeons & Dragons\\Dungeons & Dragons.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Benjamin\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Benjamin\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
