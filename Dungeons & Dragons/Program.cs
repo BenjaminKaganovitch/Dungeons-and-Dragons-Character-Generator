@@ -1,6 +1,7 @@
 using Dungeons___Dragons.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Dungeons___Dragons.Models;
 
 namespace Dungeons___Dragons
 {
@@ -17,7 +18,7 @@ namespace Dungeons___Dragons
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-                        builder.Services.AddDefaultIdentity<UserLeadEntity>(options => options.SignIn.RequireConfirmedAccount = true)
+                        builder.Services.AddDefaultIdentity<Models.UserLeadEntity>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             var app = builder.Build();
