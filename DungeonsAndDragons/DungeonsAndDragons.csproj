@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Dungeons___Dragons</RootNamespace>
+    <UserSecretsId>dde99ae9-7235-44f6-88df-bf07d8a2fe6b</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
