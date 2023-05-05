@@ -1,9 +1,2 @@
-DungeonsAndDragons/obj/Debug/net6.0/project.razor.json
-DungeonsAndDragons.Domain/obj/DungeonsAndDragons.Domain.csproj.nuget.dgspec.json
-DungeonsAndDragons.Domain/obj/DungeonsAndDragons.Domain.csproj.nuget.g.props
-DungeonsAndDragons.Domain/obj/DungeonsAndDragons.Domain.csproj.nuget.g.targets
-DungeonsAndDragons.Domain/obj/project.assets.json
-DungeonsAndDragons.Domain/obj/project.nuget.cache
-DungeonsAndDragons.Domain/obj/Debug/net6.0/DungeonsAndDragons.Domain.assets.cache
-DungeonsAndDragons.Domain/obj/Debug/net6.0/DungeonsAndDragons.Domain.csproj.AssemblyReference.cache
-DungeonsAndDragons.Domain/obj/Debug/net6.0/DungeonsAndDragons.Domain.GeneratedMSBuildEditorConfig.editorconfig
+DungeonsAndDragons.Domain/obj/
+DungeonsAndDragons/obj/
