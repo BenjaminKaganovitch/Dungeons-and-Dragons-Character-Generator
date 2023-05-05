@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Dungeons___Dragons.Domain</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Dungeons &amp; Dragons\DungeonsAndDragons.csproj" />
+		<ProjectReference Include="..\DungeonsAndDragons\DungeonsAndDragons.csproj"></ProjectReference>
+	</ItemGroup>
+</Project>

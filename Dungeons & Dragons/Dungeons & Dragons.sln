@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dungeons & Dragons", "Dungeons & Dragons.csproj", "{E8FF02FE-A5D8-4DD6-8B38-6D8428453ED5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonsAndDragons", "DungeonsAndDragons.csproj", "{E8FF02FE-A5D8-4DD6-8B38-6D8428453ED5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonsAndDragons.Domain", "..\Dungeons & Dragons.Domain\DungeonsAndDragons.Domain.csproj", "{9F478A71-B178-4F93-81DE-51828718008A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E8FF02FE-A5D8-4DD6-8B38-6D8428453ED5} = {E8FF02FE-A5D8-4DD6-8B38-6D8428453ED5}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{E8FF02FE-A5D8-4DD6-8B38-6D8428453ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8FF02FE-A5D8-4DD6-8B38-6D8428453ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8FF02FE-A5D8-4DD6-8B38-6D8428453ED5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F478A71-B178-4F93-81DE-51828718008A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F478A71-B178-4F93-81DE-51828718008A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F478A71-B178-4F93-81DE-51828718008A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F478A71-B178-4F93-81DE-51828718008A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

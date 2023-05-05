@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Unlimited Home Works\\2022-2023\\Software Developer Stream\\7. Desktop Applications and Number Systems\\Dungeons-and-Dragons-Character-Generator\\Dungeons & Dragons\\Dungeons & Dragons.csproj": {}
+    "F:\\Unlimited Home Works\\2022-2023\\Software Developer Stream\\7. Desktop Applications and Number Systems\\Dungeons-and-Dragons-Character-Generator\\Dungeons & Dragons\\DungeonsAndDragons.csproj": {}
   },
   "projects": {
-    "F:\\Unlimited Home Works\\2022-2023\\Software Developer Stream\\7. Desktop Applications and Number Systems\\Dungeons-and-Dragons-Character-Generator\\Dungeons & Dragons\\Dungeons & Dragons.csproj": {
+    "F:\\Unlimited Home Works\\2022-2023\\Software Developer Stream\\7. Desktop Applications and Number Systems\\Dungeons-and-Dragons-Character-Generator\\Dungeons & Dragons\\DungeonsAndDragons.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Unlimited Home Works\\2022-2023\\Software Developer Stream\\7. Desktop Applications and Number Systems\\Dungeons-and-Dragons-Character-Generator\\Dungeons & Dragons\\Dungeons & Dragons.csproj",
-        "projectName": "Dungeons & Dragons",
-        "projectPath": "F:\\Unlimited Home Works\\2022-2023\\Software Developer Stream\\7. Desktop Applications and Number Systems\\Dungeons-and-Dragons-Character-Generator\\Dungeons & Dragons\\Dungeons & Dragons.csproj",
+        "projectUniqueName": "F:\\Unlimited Home Works\\2022-2023\\Software Developer Stream\\7. Desktop Applications and Number Systems\\Dungeons-and-Dragons-Character-Generator\\Dungeons & Dragons\\DungeonsAndDragons.csproj",
+        "projectName": "DungeonsAndDragons",
+        "projectPath": "F:\\Unlimited Home Works\\2022-2023\\Software Developer Stream\\7. Desktop Applications and Number Systems\\Dungeons-and-Dragons-Character-Generator\\Dungeons & Dragons\\DungeonsAndDragons.csproj",
         "packagesPath": "C:\\Users\\pipit\\.nuget\\packages\\",
         "outputPath": "F:\\Unlimited Home Works\\2022-2023\\Software Developer Stream\\7. Desktop Applications and Number Systems\\Dungeons-and-Dragons-Character-Generator\\Dungeons & Dragons\\obj\\",
         "projectStyle": "PackageReference",
