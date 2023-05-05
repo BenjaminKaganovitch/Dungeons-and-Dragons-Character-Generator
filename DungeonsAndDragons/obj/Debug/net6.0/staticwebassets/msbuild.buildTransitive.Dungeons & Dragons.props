@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\Dungeons &amp; Dragons.props" />
-</Project>
