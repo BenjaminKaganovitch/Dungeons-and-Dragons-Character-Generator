@@ -1,3 +1,70 @@
 DungeonsAndDragons.Domain/obj/*
-DungeonsAndDragons/obj/*
-./.vscode/*
+DungeonsAndDragons/obj/*ns.Domain/.vscode/launch.json
+DungeonsAndDragons.Domain/.vscode/tasks.json
+DungeonsAndDragons/obj/Dungeons & Dragons.csproj.nuget.dgspec.json
+DungeonsAndDragons/obj/Dungeons & Dragons.csproj.nuget.g.props
+DungeonsAndDragons/obj/Dungeons & Dragons.csproj.nuget.g.targets
+DungeonsAndDragons/obj/DungeonsAndDragons.csproj.nuget.dgspec.json
+DungeonsAndDragons/obj/DungeonsAndDragons.csproj.nuget.g.props
+DungeonsAndDragons/obj/DungeonsAndDragons.csproj.nuget.g.targets
+DungeonsAndDragons/obj/project.assets.json
+DungeonsAndDragons/obj/project.nuget.cache
+DungeonsAndDragons/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+DungeonsAndDragons/obj/Debug/net6.0/apphost
+DungeonsAndDragons/obj/Debug/net6.0/apphost.exe
+DungeonsAndDragons/obj/Debug/net6.0/Dungeons & Dragons.AssemblyInfo.cs
+DungeonsAndDragons/obj/Debug/net6.0/Dungeons & Dragons.AssemblyInfoInputs.cache
+DungeonsAndDragons/obj/Debug/net6.0/Dungeons & Dragons.assets.cache
+DungeonsAndDragons/obj/Debug/net6.0/Dungeons & Dragons.csproj.AssemblyReference.cache
+DungeonsAndDragons/obj/Debug/net6.0/Dungeons & Dragons.csproj.BuildWithSkipAnalyzers
+DungeonsAndDragons/obj/Debug/net6.0/Dungeons & Dragons.csproj.CopyComplete
+DungeonsAndDragons/obj/Debug/net6.0/Dungeons & Dragons.csproj.CoreCompileInputs.cache
+DungeonsAndDragons/obj/Debug/net6.0/Dungeons & Dragons.csproj.FileListAbsolute.txt
+DungeonsAndDragons/obj/Debug/net6.0/Dungeons & Dragons.dll
+DungeonsAndDragons/obj/Debug/net6.0/Dungeons & Dragons.GeneratedMSBuildEditorConfig.editorconfig
+DungeonsAndDragons/obj/Debug/net6.0/Dungeons & Dragons.genruntimeconfig.cache
+DungeonsAndDragons/obj/Debug/net6.0/Dungeons & Dragons.GlobalUsings.g.cs
+DungeonsAndDragons/obj/Debug/net6.0/Dungeons & Dragons.MvcApplicationPartsAssemblyInfo.cache
+DungeonsAndDragons/obj/Debug/net6.0/Dungeons & Dragons.MvcApplicationPartsAssemblyInfo.cs
+DungeonsAndDragons/obj/Debug/net6.0/Dungeons & Dragons.pdb
+DungeonsAndDragons/obj/Debug/net6.0/Dungeons & Dragons.RazorAssemblyInfo.cache
+DungeonsAndDragons/obj/Debug/net6.0/Dungeons & Dragons.RazorAssemblyInfo.cs
+DungeonsAndDragons/obj/Debug/net6.0/DungeonsAndDragons.AssemblyInfo.cs
+DungeonsAndDragons/obj/Debug/net6.0/DungeonsAndDragons.AssemblyInfoInputs.cache
+DungeonsAndDragons/obj/Debug/net6.0/DungeonsAndDragons.assets.cache
+DungeonsAndDragons/obj/Debug/net6.0/DungeonsAndDragons.csproj.AssemblyReference.cache
+DungeonsAndDragons/obj/Debug/net6.0/DungeonsAndDragons.csproj.CopyComplete
+DungeonsAndDragons/obj/Debug/net6.0/DungeonsAndDragons.csproj.CoreCompileInputs.cache
+DungeonsAndDragons/obj/Debug/net6.0/DungeonsAndDragons.csproj.FileListAbsolute.txt
+DungeonsAndDragons/obj/Debug/net6.0/DungeonsAndDragons.dll
+DungeonsAndDragons/obj/Debug/net6.0/DungeonsAndDragons.GeneratedMSBuildEditorConfig.editorconfig
+DungeonsAndDragons/obj/Debug/net6.0/DungeonsAndDragons.genruntimeconfig.cache
+DungeonsAndDragons/obj/Debug/net6.0/DungeonsAndDragons.GlobalUsings.g.cs
+DungeonsAndDragons/obj/Debug/net6.0/DungeonsAndDragons.MvcApplicationPartsAssemblyInfo.cache
+DungeonsAndDragons/obj/Debug/net6.0/DungeonsAndDragons.MvcApplicationPartsAssemblyInfo.cs
+DungeonsAndDragons/obj/Debug/net6.0/DungeonsAndDragons.pdb
+DungeonsAndDragons/obj/Debug/net6.0/DungeonsAndDragons.RazorAssemblyInfo.cache
+DungeonsAndDragons/obj/Debug/net6.0/DungeonsAndDragons.RazorAssemblyInfo.cs
+DungeonsAndDragons/obj/Debug/net6.0/project.razor.json
+DungeonsAndDragons/obj/Debug/net6.0/project.razor.vs.json
+DungeonsAndDragons/obj/Debug/net6.0/staticwebassets.build.json
+DungeonsAndDragons/obj/Debug/net6.0/staticwebassets.development.json
+DungeonsAndDragons/obj/Debug/net6.0/staticwebassets.pack.json
+DungeonsAndDragons/obj/Debug/net6.0/ref/Dungeons & Dragons.dll
+DungeonsAndDragons/obj/Debug/net6.0/ref/DungeonsAndDragons.dll
+DungeonsAndDragons/obj/Debug/net6.0/refint/Dungeons & Dragons.dll
+DungeonsAndDragons/obj/Debug/net6.0/refint/DungeonsAndDragons.dll
+DungeonsAndDragons/obj/Debug/net6.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+DungeonsAndDragons/obj/Debug/net6.0/scopedcss/bundle/Dungeons & Dragons.styles.css
+DungeonsAndDragons/obj/Debug/net6.0/scopedcss/bundle/DungeonsAndDragons.styles.css
+DungeonsAndDragons/obj/Debug/net6.0/scopedcss/projectbundle/Dungeons & Dragons.bundle.scp.css
+DungeonsAndDragons/obj/Debug/net6.0/scopedcss/projectbundle/DungeonsAndDragons.bundle.scp.css
+DungeonsAndDragons/obj/Debug/net6.0/staticwebassets/msbuild.build.Dungeons & Dragons.props
+DungeonsAndDragons/obj/Debug/net6.0/staticwebassets/msbuild.build.DungeonsAndDragons.props
+DungeonsAndDragons/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.Dungeons & Dragons.props
+DungeonsAndDragons/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.DungeonsAndDragons.props
+DungeonsAndDragons/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.Dungeons & Dragons.props
+DungeonsAndDragons/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.DungeonsAndDragons.props
+DungeonsAndDragons/obj/Debug/net6.0/staticwebassets/msbuild.Dungeons & Dragons.Microsoft.AspNetCore.StaticWebAssets.props
+DungeonsAndDragons/obj/Debug/net6.0/staticwebassets/msbuild.DungeonsAndDragons.Microsoft.AspNetCore.StaticWebAssets.props
+DungeonsAndDragons.Domain/.vscode/launch.json
