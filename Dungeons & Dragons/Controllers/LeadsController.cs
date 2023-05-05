@@ -28,7 +28,7 @@ namespace Dungeons___Dragons.Controllers
         }
 
         // GET: Leads/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(string? id)
         {
             if (id == null || _context.Users == null)
             {
@@ -68,7 +68,7 @@ namespace Dungeons___Dragons.Controllers
         }
 
         // GET: Leads/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(string? id)
         {
             if (id == null || _context.Users == null)
             {
@@ -88,7 +88,7 @@ namespace Dungeons___Dragons.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,Mobile,Email,Source")] UserLeadEntity userLeadEntity)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,FirstName,LastName,Mobile,Email,Source")] UserLeadEntity userLeadEntity)
         {
             if (id != userLeadEntity.Id)
             {
@@ -119,7 +119,7 @@ namespace Dungeons___Dragons.Controllers
         }
 
         // GET: Leads/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(string? id)
         {
             if (id == null || _context.Users == null)
             {
@@ -155,7 +155,7 @@ namespace Dungeons___Dragons.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool UserLeadEntityExists(int id)
+        private bool UserLeadEntityExists(string id)
         {
           return (_context.Users?.Any(e => e.Id == id)).GetValueOrDefault();
         }
