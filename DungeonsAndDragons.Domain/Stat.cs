@@ -6,6 +6,8 @@ namespace Dungeons___Dragons.Domain
         Dexterity,
         Constitution,
         Intelligence,
-        Wisdom
+        Wisdom,
+        Charisma,
+        Any
     }
 }
