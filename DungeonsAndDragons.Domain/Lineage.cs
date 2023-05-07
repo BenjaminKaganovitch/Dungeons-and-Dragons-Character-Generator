@@ -6,7 +6,7 @@ using Dungeons___Dragons.Models;
 
 namespace Dungeons___Dragons.Domain
 {
-	public class Lineage
+	public class Lineage : IHomebrewable
 	{
 		public int Id { get; set; }
 		public string Name { get; set; } = null!;
