@@ -176,6 +176,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Student/OneDrive/Documents/Capstone/Dungeons-and-Dragons-Character-Generator/DungeonsAndDragons/Views/Create/CharacterCreator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3JlYXRlXENoYXJhY3RlckNyZWF0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Student/OneDrive/Documents/Capstone/Dungeons-and-Dragons-Character-Generator/DungeonsAndDragons/Views/Homebrew/CreateHomebrew.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZWJyZXdcQ3JlYXRlSG9tZWJyZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Student/OneDrive/Documents/Capstone/Dungeons-and-Dragons-Character-Generator/DungeonsAndDragons/Views/Homebrew/ViewHomebrew.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZWJyZXdcVmlld0hvbWVicmV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Student/OneDrive/Documents/Capstone/Dungeons-and-Dragons-Character-Generator/DungeonsAndDragons/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -214,6 +226,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Student/OneDrive/Documents/Capstone/Dungeons-and-Dragons-Character-Generator/DungeonsAndDragons/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Student/OneDrive/Documents/Capstone/Dungeons-and-Dragons-Character-Generator/DungeonsAndDragons/Views/Wiki/WikiHomePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2lraVxXaWtpSG9tZVBhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Student/OneDrive/Documents/Capstone/Dungeons-and-Dragons-Character-Generator/DungeonsAndDragons/Views/_ViewImports.cshtml]
