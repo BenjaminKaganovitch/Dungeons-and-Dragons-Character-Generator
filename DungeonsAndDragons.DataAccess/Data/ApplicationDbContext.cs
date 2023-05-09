@@ -1,4 +1,4 @@
-﻿using Dungeons___Dragons.Models;
+using Dungeons___Dragons.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
