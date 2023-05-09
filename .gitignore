@@ -68,3 +68,5 @@ DungeonsAndDragons/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.Dung
 DungeonsAndDragons/obj/Debug/net6.0/staticwebassets/msbuild.Dungeons & Dragons.Microsoft.AspNetCore.StaticWebAssets.props
 DungeonsAndDragons/obj/Debug/net6.0/staticwebassets/msbuild.DungeonsAndDragons.Microsoft.AspNetCore.StaticWebAssets.props
 DungeonsAndDragons.Domain/.vscode/launch.json
+DungeonsAndDragons/.vscode/launch.json
+DungeonsAndDragons/.vscode/tasks.json

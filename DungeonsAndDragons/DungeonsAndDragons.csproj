@@ -19,5 +19,8 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
   </ItemGroup>
-
+  
+  <ItemGroup>
+		<ProjectReference Include="..\DungeonsAndDragons.Domain\DungeonsAndDragons.Domain.csproj"/>
+	</ItemGroup>
 </Project>
