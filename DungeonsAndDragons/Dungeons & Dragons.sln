@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonsAndDragons", "DungeonsAndDragons.csproj", "{E8FF02FE-A5D8-4DD6-8B38-6D8428453ED5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonsAndDragons.Domain", "..\Dungeons & Dragons.Domain\DungeonsAndDragons.Domain.csproj", "{9F478A71-B178-4F93-81DE-51828718008A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonsAndDragons.Domain", "..\DungeonsAndDragons.Domain\DungeonsAndDragons.Domain.csproj", "{9F478A71-B178-4F93-81DE-51828718008A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{E8FF02FE-A5D8-4DD6-8B38-6D8428453ED5} = {E8FF02FE-A5D8-4DD6-8B38-6D8428453ED5}
 	EndProjectSection
