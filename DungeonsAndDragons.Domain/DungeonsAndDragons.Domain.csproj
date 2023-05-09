@@ -8,6 +8,6 @@
   </PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\DungeonsAndDragons\DungeonsAndDragons.csproj"/>
+		<ProjectReference Include="..\DungeonsAndDragons.Identity\DungeonsAndDragons.Identity.csproj"/>
 	</ItemGroup>
 </Project>

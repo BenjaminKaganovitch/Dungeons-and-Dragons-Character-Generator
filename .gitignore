@@ -94,3 +94,8 @@ DungeonsAndDragons/.vscode/solution-explorer/interface.cs-template
 DungeonsAndDragons/.vscode/solution-explorer/interface.ts-template
 DungeonsAndDragons/.vscode/solution-explorer/template-list.json
 DungeonsAndDragons/.vscode/solution-explorer/template-parameters.js
+DungeonsAndDragons.Identity/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+DungeonsAndDragons.Identity/obj/Debug/net6.0/DungeonsAndDragons.Identity.AssemblyInfo.cs
+DungeonsAndDragons.Identity/obj/Debug/net6.0/DungeonsAndDragons.Identity.AssemblyInfoInputs.cache
+DungeonsAndDragons.Identity/obj/Debug/net6.0/DungeonsAndDragons.Identity.GeneratedMSBuildEditorConfig.editorconfig
+DungeonsAndDragons.Identity/obj/Debug/net6.0/DungeonsAndDragons.Identity.GlobalUsings.g.cs
