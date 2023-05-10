@@ -1,8 +1,8 @@
-﻿using Dungeons___Dragons.Models;
+﻿using DungeonsAndDragons.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Dungeons___Dragons.Controllers
+namespace DungeonsAndDragons.Controllers
 {
     //git test
     public class HomeController : Controller

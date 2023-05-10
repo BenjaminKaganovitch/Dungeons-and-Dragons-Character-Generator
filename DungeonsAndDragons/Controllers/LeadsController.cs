@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Dungeons___Dragons.Data;
-using Dungeons___Dragons.Models;
+using DungeonsAndDragons.Data;
+using DungeonsAndDragons.Models;
 
-namespace Dungeons___Dragons.Controllers
+namespace DungeonsAndDragons.Controllers
 {
     public class LeadsController : Controller
     {

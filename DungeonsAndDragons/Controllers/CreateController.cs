@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Dungeons___Dragons.Controllers
+namespace DungeonsAndDragons.Controllers
 {
 	public class CreateController : Controller
 	{

@@ -2,13 +2,13 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 using System;
 using System.Threading.Tasks;
-using Dungeons___Dragons.Models;
+using DungeonsAndDragons.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace Dungeons___Dragons.Areas.Identity.Pages.Account.Manage
+namespace DungeonsAndDragons.Areas.Identity.Pages.Account.Manage
 {
     public class PersonalDataModel : PageModel
     {

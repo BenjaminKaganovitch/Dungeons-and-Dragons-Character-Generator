@@ -1,8 +1,8 @@
-﻿using Dungeons___Dragons.Models;
+﻿using DungeonsAndDragons.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Dungeons___Dragons.Data
+namespace DungeonsAndDragons.Data
 {
     public class ApplicationDbContext:IdentityDbContext
     {

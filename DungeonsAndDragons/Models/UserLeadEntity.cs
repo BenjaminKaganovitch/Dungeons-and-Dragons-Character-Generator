@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace Dungeons___Dragons.Models
+namespace DungeonsAndDragons.Models
 {
     public class UserLeadEntity : IdentityUser
     {

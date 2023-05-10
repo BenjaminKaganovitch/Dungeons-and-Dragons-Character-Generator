@@ -1,4 +1,4 @@
-namespace Dungeons___Dragons.Models
+namespace DungeonsAndDragons.Models
 {
     public class ErrorViewModel
     {

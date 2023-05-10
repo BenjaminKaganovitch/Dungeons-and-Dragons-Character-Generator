@@ -1,9 +1,9 @@
-using Dungeons___Dragons.Data;
+using DungeonsAndDragons.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
-using Dungeons___Dragons.Models;
+using DungeonsAndDragons.Models;
 
-namespace Dungeons___Dragons
+namespace DungeonsAndDragons
 {
     public class Program
     {
