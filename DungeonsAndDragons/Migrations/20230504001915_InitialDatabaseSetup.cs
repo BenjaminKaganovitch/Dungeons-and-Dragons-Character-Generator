@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Dungeons___Dragons.Migrations
+namespace DungeonsAndDragons.Migrations
 {
     /// <inheritdoc />
     public partial class InitialDatabaseSetup : Migration

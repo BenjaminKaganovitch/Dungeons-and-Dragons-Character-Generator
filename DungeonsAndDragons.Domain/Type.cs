@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dungeons___Dragons.Domain
+namespace DungeonsAndDragons.Domain
 {
     public enum Type
     {

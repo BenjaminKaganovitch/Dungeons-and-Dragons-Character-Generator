@@ -7,14 +7,14 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
-using Dungeons___Dragons.Models;
+using DungeonsAndDragons.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 
-namespace Dungeons___Dragons.Areas.Identity.Pages.Account.Manage
+namespace DungeonsAndDragons.Areas.Identity.Pages.Account.Manage
 {
     public class EmailModel : PageModel
     {
