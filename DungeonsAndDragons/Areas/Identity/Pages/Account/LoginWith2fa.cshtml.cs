@@ -9,11 +9,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using Dungeons___Dragons.Models;
+using DungeonsAndDragons.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 
-namespace Dungeons___Dragons.Areas.Identity.Pages.Account
+namespace DungeonsAndDragons.Areas.Identity.Pages.Account
 {
     public class LoginWith2faModel : PageModel
     {

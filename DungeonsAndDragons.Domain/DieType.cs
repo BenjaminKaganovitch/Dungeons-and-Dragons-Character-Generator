@@ -1,4 +1,4 @@
-namespace Dungeons___Dragons.Domain
+namespace DungeonsAndDragons.Domain
 {
     //The values are 1 higher than the number of sides so that Random.Next(1, DieType.[insert type here]) works for getting the intended values.
     public enum DieType

@@ -3,7 +3,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>Dungeons___Dragons</RootNamespace>
+    <RootNamespace>DungeonsAndDragons</RootNamespace>
     <UserSecretsId>dde99ae9-7235-44f6-88df-bf07d8a2fe6b</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
@@ -16,5 +16,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DungeonsAndDragons.DataAccess\DungeonsAndDragons.DataAccess.csproj" />
+    <ProjectReference Include="..\DungeonsAndDragons.Services\DungeonsAndDragons.Services.csproj" />
+    <ProjectReference Include="..\DungeonsAndDragons.Identity\DungeonsAndDragons.Identity.csproj" />
   </ItemGroup>
 </Project>

@@ -5,16 +5,16 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonsAndDragons", "DungeonsAndDragons.csproj", "{E8FF02FE-A5D8-4DD6-8B38-6D8428453ED5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonsAndDragons.Domain", "..\DungeonsAndDragons.Domain\DungeonsAndDragons.Domain.csproj", "{9F478A71-B178-4F93-81DE-51828718008A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonsAndDragons.Domain", "..\DungeonsAndDragons.Domain\DungeonsAndDragons.Domain.csproj", "{9F478A71-B178-4F93-81DE-51828718008A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{E8FF02FE-A5D8-4DD6-8B38-6D8428453ED5} = {E8FF02FE-A5D8-4DD6-8B38-6D8428453ED5}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonsAndDragons.DataAccess", "..\DungeonsAndDragons.DataAccess\DungeonsAndDragons.DataAccess.csproj", "{0D304751-0076-4A37-A369-22120C3937F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonsAndDragons.Services", "..\DungeonsAndDragons.Services\DungeonsAndDragons.Services.csproj", "{7F5AC8E9-130B-4803-A16A-BEC25DE24FED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonsAndDragons.Services", "..\DungeonsAndDragons.Services\DungeonsAndDragons.Services.csproj", "{7F5AC8E9-130B-4803-A16A-BEC25DE24FED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonsAndDragons.Identity", "..\DungeonsAndDragons.Identity\DungeonsAndDragons.Identity.csproj", "{EF75DF2D-9805-4813-A1AD-5E6C6E0207BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonsAndDragons.Identity", "..\DungeonsAndDragons.Identity\DungeonsAndDragons.Identity.csproj", "{EF75DF2D-9805-4813-A1AD-5E6C6E0207BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonsAndDragons.DataAccess", "..\DungeonsAndDragons.DataAccess\DungeonsAndDragons.DataAccess.csproj", "{5994D28C-4699-45AF-9FC8-615E215F7B2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,10 +30,6 @@ Global
 		{9F478A71-B178-4F93-81DE-51828718008A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F478A71-B178-4F93-81DE-51828718008A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F478A71-B178-4F93-81DE-51828718008A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0D304751-0076-4A37-A369-22120C3937F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0D304751-0076-4A37-A369-22120C3937F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0D304751-0076-4A37-A369-22120C3937F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0D304751-0076-4A37-A369-22120C3937F7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7F5AC8E9-130B-4803-A16A-BEC25DE24FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7F5AC8E9-130B-4803-A16A-BEC25DE24FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F5AC8E9-130B-4803-A16A-BEC25DE24FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -42,6 +38,10 @@ Global
 		{EF75DF2D-9805-4813-A1AD-5E6C6E0207BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF75DF2D-9805-4813-A1AD-5E6C6E0207BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF75DF2D-9805-4813-A1AD-5E6C6E0207BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5994D28C-4699-45AF-9FC8-615E215F7B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5994D28C-4699-45AF-9FC8-615E215F7B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5994D28C-4699-45AF-9FC8-615E215F7B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5994D28C-4699-45AF-9FC8-615E215F7B2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

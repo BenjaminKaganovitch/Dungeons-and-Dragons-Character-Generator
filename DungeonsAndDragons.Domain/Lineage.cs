@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Dungeons___Dragons.Models;
+using DungeonsAndDragons.Identity;
 
-namespace Dungeons___Dragons.Domain
+namespace DungeonsAndDragons.Domain
 {
 	public class Lineage : IHomebrewable
 	{

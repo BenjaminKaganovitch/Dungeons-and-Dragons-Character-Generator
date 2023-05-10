@@ -1,8 +1,8 @@
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace Dungeons___Dragons.Models
+namespace DungeonsAndDragons.Identity
 {
-	public class UserLeadEntity : IdentityUser
+    public class UserLeadEntity : IdentityUser
 	{
 		public string FirstName { get; set; } = null!;
 		public string LastName { get; set; } = null!;

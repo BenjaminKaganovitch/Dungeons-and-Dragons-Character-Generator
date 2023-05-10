@@ -1,6 +1,6 @@
-﻿using Dungeons___Dragons.Models;
+﻿using DungeonsAndDragons.Identity;
 
-namespace Dungeons___Dragons.Domain
+namespace DungeonsAndDragons.Domain
 {
 	public class Spell : IHomebrewable
 	{

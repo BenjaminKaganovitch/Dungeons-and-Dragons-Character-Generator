@@ -1,4 +1,4 @@
-namespace Dungeons___Dragons.Domain
+namespace DungeonsAndDragons.Domain
 {
     public enum ProficiencyLevel
     {

@@ -1,10 +1,10 @@
-using Dungeons___Dragons.Models;
+using DungeonsAndDragons.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Dungeons___Dragons.Data
+namespace DungeonsAndDragons.DataAccess
 {
-    public class ApplicationDbContext:IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options)
         {
