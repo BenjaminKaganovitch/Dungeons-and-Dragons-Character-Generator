@@ -16,10 +16,18 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="7.0.5" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DungeonsAndDragons.DataAccess\DungeonsAndDragons.DataAccess.csproj" />
     <ProjectReference Include="..\DungeonsAndDragons.Services\DungeonsAndDragons.Services.csproj" />
     <ProjectReference Include="..\DungeonsAndDragons.Identity\DungeonsAndDragons.Identity.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Leads\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Leads\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Leads\Details.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Leads\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Leads\Index.cshtml" />
   </ItemGroup>
 </Project>

@@ -7,7 +7,8 @@ namespace DungeonsAndDragons.Domain
 {
 	public class SavingThrow
 	{
-		public int Id { get; set; }
+		public int CharacterId { get; set; }
+		public Character Character { get; set; }
 		public Stat Stat { get; set; }
 		public bool IsProficient { get; set; }
 	}

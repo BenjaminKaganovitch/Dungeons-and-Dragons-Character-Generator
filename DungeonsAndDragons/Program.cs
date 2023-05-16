@@ -17,9 +17,8 @@ namespace DungeonsAndDragons
 
             //Injecting connection string class, into the application DbContext Class
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-                        builder.Services.AddDefaultIdentity<UserLeadEntity>(options => options.SignIn.RequireConfirmedAccount = true)
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddDefaultIdentity<UserLeadEntity>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             var app = builder.Build();
