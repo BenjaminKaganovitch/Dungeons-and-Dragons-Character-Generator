@@ -20,6 +20,8 @@ namespace DungeonsAndDragons.DataAccess
 				HasKey(cc => new { cc.CharacterId, cc.ClassId });
 			builder.Entity<CharacterStat>().
 				HasKey(cs => new { cs.CharacterId, cs.Stat });
+			builder.Entity<CharacterSkill>().
+				HasKey(cs => new { cs.CharacterId, cs.SkillId });
 			builder.Entity<SavingThrow>().
 				HasKey(st => new { st.CharacterId, st.Stat });
 		}
