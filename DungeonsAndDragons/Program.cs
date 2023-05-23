@@ -43,6 +43,7 @@ namespace DungeonsAndDragons
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
+
             app.Run();
         }
     }

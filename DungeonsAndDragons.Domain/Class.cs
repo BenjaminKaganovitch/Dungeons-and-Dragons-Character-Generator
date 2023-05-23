@@ -12,9 +12,9 @@ namespace DungeonsAndDragons.Domain
 		public string Source { get; set; } = null!;
 		public DieType HitDieType { get; set; }
 		public string Description { get; set; } = null!;
-		public IEnumerable<Feature> Features { get; set; } = null!;
+		public ICollection<Feature> Features { get; set; } = new List<Feature>();
 		//Not all classes can use spells, so this is nullable
-		public IEnumerable<Spell>? Spells { get; set; }
-		public IEnumerable<Subclass> Subclasses { get; set; } = null!;
+		public ICollection<Spell> Spells { get; set; } = new List<Spell>();
+		public ICollection<Subclass> Subclasses { get; set; } = new List<Subclass>();
 	}
 }

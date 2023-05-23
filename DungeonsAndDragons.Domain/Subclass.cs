@@ -10,7 +10,7 @@ namespace DungeonsAndDragons.Domain
 		public string Description { get; set; } = null!;
 		public string? CreatorId { get; set; }
 		public UserLeadEntity? Creator { get; set; }
-		public IEnumerable<Feature> Features { get; set; } = null!;
-		public IEnumerable<Spell>? Spells { get; set; }
+		public ICollection<Feature> Features { get; set; } = new List<Feature>();
+		public ICollection<Spell> Spells { get; set; } = new List<Spell>();
 	}
 }
