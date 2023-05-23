@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Dungeons and Dragons-Character Generator.props" />
+</Project>
