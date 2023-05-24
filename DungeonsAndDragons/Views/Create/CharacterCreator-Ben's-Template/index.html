@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Carousel</title>
+  <style>
+    .carousel {
+      overflow: hidden;
+    }
+
+    .carousel .row {
+      white-space: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    .carousel .row::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, and Opera */
+    }
+
+
+    .carousel .row.selected {
+      border: 2px solid blue; /* Example border styling */
+    }
+
+    .carousel .row img {
+      display: inline-block;
+      height: 100%;
+      /* Add any additional styling for the images */
+    }
+
+    .carousel .row img.selected {
+      transform: scale(1.1); /* Example scaling for the selected image */
+      /* Add any additional styling for the selected image */
+      transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+    }
+
+    .carousel .row img.previous {
+      transform: scale(0.9); /* Example scaling for the previous image */
+      /* Add any additional styling for the previous image */
+      transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel">
+    <div class="row selected">
+      <img src="AbstractProgram.jpg" alt="Image 1">
+      <img src="AbstractProgram.jpg" alt="Image 2">
+      <img src="AbstractProgram.jpg" alt="Image 1">
+      <img src="AbstractProgram.jpg" alt="Image 2">
+      <img src="AbstractProgram.jpg" alt="Image 1">
+      <img src="AbstractProgram.jpg" alt="Image 2">
+      <img src="AbstractProgram.jpg" alt="Image 1">
+      <img src="AbstractProgram.jpg" alt="Image 2">
+      <img src="AbstractProgram.jpg" alt="Image 1">
+      <img src="AbstractProgram.jpg" alt="Image 2">
+      <img src="AbstractProgram.jpg" alt="Image 1">
+      <img src="AbstractProgram.jpg" alt="Image 2">
+      <img src="AbstractProgram.jpg" alt="Image 1">
+      <img src="AbstractProgram.jpg" alt="Image 2">
+      <img src="AbstractProgram.jpg" alt="Image 1">
+      <img src="AbstractProgram.jpg" alt="Image 2">
+      <img src="AbstractProgram.jpg" alt="Image 1">
+      <img src="AbstractProgram.jpg" alt="Image 2">
+      <img src="AbstractProgram.jpg" alt="Image 1">
+      <img src="AbstractProgram.jpg" alt="Image 2">
+
+      <!-- Add more images for the first row -->
+    </div>
+    <div class="row">
+      <img src="AbstractProgram.jpg" alt="Image 3">
+      <img src="AbstractProgram.jpg" alt="Image 4">
+      <img src="AbstractProgram.jpg" alt="Image 1">
+      <img src="AbstractProgram.jpg" alt="Image 2">
+      <img src="AbstractProgram.jpg" alt="Image 1">
+      <img src="AbstractProgram.jpg" alt="Image 2">
+      <img src="AbstractProgram.jpg" alt="Image 1">
+      <img src="AbstractProgram.jpg" alt="Image 2">
+      <img src="AbstractProgram.jpg" alt="Image 1">
+      <img src="AbstractProgram.jpg" alt="Image 2">
+
+      <img src="AbstractProgram.jpg" alt="Image 1">
+      <img src="AbstractProgram.jpg" alt="Image 2">
+      <img src="AbstractProgram.jpg" alt="Image 1">
+      <img src="AbstractProgram.jpg" alt="Image 2">
+
+      <img src="AbstractProgram.jpg" alt="Image 1">
+      <img src="AbstractProgram.jpg" alt="Image 2">
+      <img src="AbstractProgram.jpg" alt="Image 1">
+      <img src="AbstractProgram.jpg" alt="Image 2">
+      <img src="AbstractProgram.jpg" alt="Image 1">
+      <img src="AbstractProgram.jpg" alt="Image 2">
+      
+      <!-- Add more images for the second row -->
+    </div>
+    <!-- Add more rows as needed -->
+  </div>
+
+  <script>
+    const carousel = document.querySelector('.carousel');
+    let activeRow = carousel.querySelector('.row.selected') || carousel.querySelector('.row:first-child');
+    let selectedImageIndex = 0;
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'ArrowRight') {
+        // Scroll active row to the left
+        const images = activeRow.querySelectorAll('img');
+        images[selectedImageIndex].classList.remove('selected');
+        images[selectedImageIndex].classList.add('previous');
+        selectedImageIndex = (selectedImageIndex + 1) % images.length;
+        images[selectedImageIndex].classList.add('selected');
+        images[selectedImageIndex].classList.remove('previous');
+
+        // Scroll the row to bring the selected image into view
+        const selectedImage = images[selectedImageIndex];
+        const rowRect = activeRow.getBoundingClientRect();
+        const imageRect = selectedImage.getBoundingClientRect();
+        if (imageRect.right > rowRect.right) {
+          activeRow.scrollLeft += imageRect.right - rowRect.right;
+        } else if (imageRect.left < rowRect.left) {
+          activeRow.scrollLeft -= rowRect.left - imageRect.left;
+        }
+      } else if (event.key === 'ArrowLeft') {
+        // Scroll active row to the right
+        const images = activeRow.querySelectorAll('img');
+        images[selectedImageIndex].classList.remove('selected');
+        images[selectedImageIndex].classList.add('previous');
+        selectedImageIndex = (selectedImageIndex - 1 + images.length) % images.length;
+        images[selectedImageIndex].classList.add('selected');
+        images[selectedImageIndex].classList.remove('previous');
+
+        // Scroll the row to bring the selected image into view
+        const selectedImage = images[selectedImageIndex];
+        const rowRect = activeRow.getBoundingClientRect();
+        const imageRect = selectedImage.getBoundingClientRect();
+        if (imageRect.left < rowRect.left) {
+          activeRow.scrollLeft -= rowRect.left - imageRect.left;
+        } else if (imageRect.right > rowRect.right) {
+          activeRow.scrollLeft += imageRect.right - rowRect.right;
+        }
+      } else if (event.key === 'ArrowDown') {
+        // Switch to the next row
+        activeRow.classList.remove('selected');
+        activeRow = activeRow.nextElementSibling || carousel.querySelector('.row:first-child');
+        activeRow.classList.add('selected');
+        selectedImageIndex = 0; // Reset the selected image index when switching rows
+        const images = activeRow.querySelectorAll('img');
+        images[selectedImageIndex].classList.add('selected');
+      } else if (event.key === 'ArrowUp') {
+        // Switch to the previous row
+        activeRow.classList.remove('selected');
+        activeRow = activeRow.previousElementSibling || carousel.querySelector('.row:last-child');
+        activeRow.classList.add('selected');
+        selectedImageIndex = 0; // Reset the selected image index when switching rows
+        const images = activeRow.querySelectorAll('img');
+        images[selectedImageIndex].classList.add('selected');
+      }
+    });
+  </script>
+</body>
+</html>
