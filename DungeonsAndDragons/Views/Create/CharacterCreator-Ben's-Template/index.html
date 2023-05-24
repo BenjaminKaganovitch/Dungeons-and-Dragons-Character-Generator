@@ -3,10 +3,23 @@
 <head>
   <title>Character Creator</title>
   <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: #f5f5f5;
+    }
+
     .container {
-      margin: 0 auto;
-      max-width: 800px;
-      padding: 20px;
+      width: 80%;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .carousel {
@@ -16,22 +29,22 @@
 
     .carousel .row {
       white-space: nowrap;
-      overflow-x: auto;
-      scrollbar-width: none; 
-      -ms-overflow-style: none; 
-    }
-
-    .carousel .row::-webkit-scrollbar {
-      display: none; 
+      overflow-x: hidden;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      transition: transform 0.3s ease-in-out;
+      width: 80%; 
     }
 
     .carousel .row.selected {
-      border: 2px solid blue; 
+      border: 2px solid blue;
     }
 
     .carousel .row img {
       display: inline-block;
-      height: 100%;
+      height: 80px; 
+      margin-right: 10px;
+      cursor: pointer;
     }
 
     .carousel .row img.selected {
@@ -47,28 +60,31 @@
     .black-screen {
       background-color: black;
       color: white;
+      width: 100%;
       padding: 20px;
+      flex-grow: 1;
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="black-screen">
+      Default Description
+    </div>
+
     <div class="carousel">
       <div class="row selected">
         <img src="AbstractProgram.jpg" alt="Warrior">
         <img src="AbstractProgram.jpg" alt="Mage">
         <img src="AbstractProgram.jpg" alt="Rogue">
+        <img src="random.jpg" alt="">
       </div>
       <div class="row">
-        <img src="AbstractProgram.jpg" alt="Warrior">
-        <img src="AbstractProgram.jpg" alt="Mage">
-        <img src="AbstractProgram.jpg" alt="Rogue">
+        <img src="AbstractProgram.jpg" alt="Tank">
+        <img src="AbstractProgram.jpg" alt="Healer">
+        <img src="AbstractProgram.jpg" alt="Support">
       </div>
       <!-- Add more rows as needed -->
-    </div>
-
-    <div class="black-screen">
-      Default Description
     </div>
   </div>
 
@@ -80,7 +96,14 @@
 
     // Update description on image selection
     function updateDescription() {
-      blackScreen.textContent = 'Default Description'; // Update with the desired description for the selected image
+      const rowNumber = carousel.querySelectorAll('.row').indexOf(activeRow) + 1;
+      if (rowNumber === 1) {
+        blackScreen.textContent = 'Description for Row 1';
+      } else if (rowNumber === 2) {
+        blackScreen.textContent = 'Description for Row 2';
+      } else {
+        blackScreen.textContent = 'Default Description';
+      }
     }
 
     document.addEventListener('keydown', function(event) {
@@ -128,14 +151,16 @@
         selectedImageIndex = 0; // Reset the selected image index when switching rows
         const images = activeRow.querySelectorAll('img');
         images[selectedImageIndex].classList.add('selected');
+        activeRow.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } else if (event.key === 'ArrowUp') {
         // Switch to the previous row
         activeRow.classList.remove('selected');
         activeRow = activeRow.previousElementSibling || carousel.querySelector('.row:last-child');
         activeRow.classList.add('selected');
-        selectedImageIndex = 0; // Reset the selected image index when switching rows
+        selectedImageIndex = 0;
         const images = activeRow.querySelectorAll('img');
         images[selectedImageIndex].classList.add('selected');
+        activeRow.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
 
       // Update the description on image selection
