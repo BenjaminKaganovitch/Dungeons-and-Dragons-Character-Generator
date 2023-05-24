@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DungeonsAndDragons.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230517143227_AddNewColumns")]
-    partial class AddNewColumns
+    [Migration("20230524135759_post-nuke")]
+    partial class postnuke
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
