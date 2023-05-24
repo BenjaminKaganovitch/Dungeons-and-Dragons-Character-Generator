@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Image Carousel</title>
+  <title>Character Creator</title>
   <style>
+    .container {
+      margin: 0 auto;
+      max-width: 800px;
+      padding: 20px;
+    }
+
     .carousel {
       overflow: hidden;
+      margin-bottom: 20px;
     }
 
     .carousel .row {
@@ -18,7 +25,6 @@
       display: none; 
     }
 
-
     .carousel .row.selected {
       border: 2px solid blue; 
     }
@@ -26,81 +32,56 @@
     .carousel .row img {
       display: inline-block;
       height: 100%;
-      /* Add any additional styling for the images */
     }
 
     .carousel .row img.selected {
-      transform: scale(1.1); /* Example scaling for the selected image */
-      /* Add any additional styling for the selected image */
-      transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+      transform: scale(1.1);
+      transition: transform 0.3s ease-in-out;
     }
 
     .carousel .row img.previous {
-      transform: scale(0.9); 
-      /* Add any additional styling for the previous image */
-      transition: transform 0.3s ease-in-out; 
+      transform: scale(0.9);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .black-screen {
+      background-color: black;
+      color: white;
+      padding: 20px;
     }
   </style>
 </head>
 <body>
-  <div class="carousel">
-    <div class="row selected">
-      <img src="AbstractProgram.jpg" alt="Image 1">
-      <img src="AbstractProgram.jpg" alt="Image 2">
-      <img src="AbstractProgram.jpg" alt="Image 1">
-      <img src="AbstractProgram.jpg" alt="Image 2">
-      <img src="AbstractProgram.jpg" alt="Image 1">
-      <img src="AbstractProgram.jpg" alt="Image 2">
-      <img src="AbstractProgram.jpg" alt="Image 1">
-      <img src="AbstractProgram.jpg" alt="Image 2">
-      <img src="AbstractProgram.jpg" alt="Image 1">
-      <img src="AbstractProgram.jpg" alt="Image 2">
-      <img src="AbstractProgram.jpg" alt="Image 1">
-      <img src="AbstractProgram.jpg" alt="Image 2">
-      <img src="AbstractProgram.jpg" alt="Image 1">
-      <img src="AbstractProgram.jpg" alt="Image 2">
-      <img src="AbstractProgram.jpg" alt="Image 1">
-      <img src="AbstractProgram.jpg" alt="Image 2">
-      <img src="AbstractProgram.jpg" alt="Image 1">
-      <img src="AbstractProgram.jpg" alt="Image 2">
-      <img src="AbstractProgram.jpg" alt="Image 1">
-      <img src="AbstractProgram.jpg" alt="Image 2">
-
-      <!-- Add more images for the first row -->
+  <div class="container">
+    <div class="carousel">
+      <div class="row selected">
+        <img src="AbstractProgram.jpg" alt="Warrior">
+        <img src="AbstractProgram.jpg" alt="Mage">
+        <img src="AbstractProgram.jpg" alt="Rogue">
+      </div>
+      <div class="row">
+        <img src="AbstractProgram.jpg" alt="Warrior">
+        <img src="AbstractProgram.jpg" alt="Mage">
+        <img src="AbstractProgram.jpg" alt="Rogue">
+      </div>
+      <!-- Add more rows as needed -->
     </div>
-    <div class="row">
-      <img src="AbstractProgram.jpg" alt="Image 3">
-      <img src="AbstractProgram.jpg" alt="Image 4">
-      <img src="AbstractProgram.jpg" alt="Image 1">
-      <img src="AbstractProgram.jpg" alt="Image 2">
-      <img src="AbstractProgram.jpg" alt="Image 1">
-      <img src="AbstractProgram.jpg" alt="Image 2">
-      <img src="AbstractProgram.jpg" alt="Image 1">
-      <img src="AbstractProgram.jpg" alt="Image 2">
-      <img src="AbstractProgram.jpg" alt="Image 1">
-      <img src="AbstractProgram.jpg" alt="Image 2">
 
-      <img src="AbstractProgram.jpg" alt="Image 1">
-      <img src="AbstractProgram.jpg" alt="Image 2">
-      <img src="AbstractProgram.jpg" alt="Image 1">
-      <img src="AbstractProgram.jpg" alt="Image 2">
-
-      <img src="AbstractProgram.jpg" alt="Image 1">
-      <img src="AbstractProgram.jpg" alt="Image 2">
-      <img src="AbstractProgram.jpg" alt="Image 1">
-      <img src="AbstractProgram.jpg" alt="Image 2">
-      <img src="AbstractProgram.jpg" alt="Image 1">
-      <img src="AbstractProgram.jpg" alt="Image 2">
-      
-      <!-- Add more images for the second row -->
+    <div class="black-screen">
+      Default Description
     </div>
-    <!-- Add more rows as needed -->
   </div>
 
   <script>
     const carousel = document.querySelector('.carousel');
+    const blackScreen = document.querySelector('.black-screen');
     let activeRow = carousel.querySelector('.row.selected') || carousel.querySelector('.row:first-child');
     let selectedImageIndex = 0;
+
+    // Update description on image selection
+    function updateDescription() {
+      blackScreen.textContent = 'Default Description'; // Update with the desired description for the selected image
+    }
 
     document.addEventListener('keydown', function(event) {
       if (event.key === 'ArrowRight') {
@@ -156,6 +137,9 @@
         const images = activeRow.querySelectorAll('img');
         images[selectedImageIndex].classList.add('selected');
       }
+
+      // Update the description on image selection
+      updateDescription();
     });
   </script>
 </body>
