@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using DungeonsAndDragons.Identity;
 using DungeonsAndDragons.DataAccess;
+using DungeonsAndDragons.DataAccess.Data;
 
 namespace DungeonsAndDragons
 {
@@ -23,6 +24,13 @@ namespace DungeonsAndDragons
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             var app = builder.Build();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+
+                SeedData.Initialize(services);
+            }
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
