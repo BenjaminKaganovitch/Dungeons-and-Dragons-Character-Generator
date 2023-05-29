@@ -33,5 +33,18 @@ namespace DungeonsAndDragons.Controllers
 			}
 			return View(spell);
 		}
-	}
+        public IActionResult WikiFeatPage(int id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Feat feat = _db.Feats.Include(f => f.Creator).Include(f => f.Spells).FirstOrDefault(f => f.Id == id);
+            if (feat == null)
+            {
+                return NotFound();
+            }
+            return View(feat);
+        }
+    }
 }

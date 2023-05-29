@@ -1,0 +1,14 @@
+﻿@using DungeonsAndDragons.Domain
+@model Feat
+
+<div class="center">
+    <h2>@Model.Name</h2>
+    <p>@Model.Description</p>
+    <p>Magic Schools: @Model.MagicSchools</p>
+    <div>
+        @foreach(Spell spell in Model.Spells){
+                    <p><a asp-action="WikiSpellPage" asp-route-id="@spell.Id">@spell.Name</a></p>
+        }
+    </div>
+    <p>Source: @Model.Source</p>
+</div>
