@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DungeonsAndDragons.Domain;
-using Type = DungeonsAndDragons.Domain.Type;
+using DungeonsAndDragons.DataAccess;
 
-namespace DungeonsAndDragons.DataAccess.Data
+namespace DungeonsAndDragons.Services
 {
     public static class SeedData
     {
@@ -32,7 +32,7 @@ namespace DungeonsAndDragons.DataAccess.Data
                 {
                     Name = "Fireball",
                     Source = "Player's Handbook",
-                    SpellType = Type.Cantrip,
+                    SpellType = SpellType.Cantrip,
                     MagicSchool = "Evocation",
                     Range = "150 feet",
                     CastingTime = "1 action",
@@ -51,7 +51,7 @@ namespace DungeonsAndDragons.DataAccess.Data
                 {
                     Name = "Fireball",
                     Source = "Player's Handbook",
-                    SpellType = Type.FirstLevel,
+                    SpellType = SpellType.FirstLevel,
                     MagicSchool = "Evocation",
                     Range = "150 feet",
                     CastingTime = "1 action",
@@ -70,7 +70,7 @@ namespace DungeonsAndDragons.DataAccess.Data
                 {
                     Name = "Fireball",
                     Source = "Player's Handbook",
-                    SpellType = Type.SecondLevel,
+                    SpellType = SpellType.SecondLevel,
                     MagicSchool = "Evocation",
                     Range = "150 feet",
                     CastingTime = "1 action",
@@ -89,7 +89,7 @@ namespace DungeonsAndDragons.DataAccess.Data
                 {
                     Name = "Fireball",
                     Source = "Player's Handbook",
-                    SpellType = Type.ThirdLevel,
+                    SpellType = SpellType.ThirdLevel,
                     MagicSchool = "Evocation",
                     Range = "150 feet",
                     CastingTime = "1 action",
@@ -108,7 +108,7 @@ namespace DungeonsAndDragons.DataAccess.Data
                 {
                     Name = "Fireball",
                     Source = "Player's Handbook",
-                    SpellType = Type.FourthLevel,
+                    SpellType = SpellType.FourthLevel,
                     MagicSchool = "Evocation",
                     Range = "150 feet",
                     CastingTime = "1 action",
@@ -127,7 +127,7 @@ namespace DungeonsAndDragons.DataAccess.Data
                 {
                     Name = "Fireball",
                     Source = "Player's Handbook",
-                    SpellType = Type.FifthLevel,
+                    SpellType = SpellType.FifthLevel,
                     MagicSchool = "Evocation",
                     Range = "150 feet",
                     CastingTime = "1 action",
@@ -146,7 +146,7 @@ namespace DungeonsAndDragons.DataAccess.Data
                 {
                     Name = "Fireball",
                     Source = "Player's Handbook",
-                    SpellType = Type.SixthLevel,
+                    SpellType = SpellType.SixthLevel,
                     MagicSchool = "Evocation",
                     Range = "150 feet",
                     CastingTime = "1 action",
@@ -165,7 +165,7 @@ namespace DungeonsAndDragons.DataAccess.Data
                 {
                     Name = "Fireball",
                     Source = "Player's Handbook",
-                    SpellType = Type.SeventhLevel,
+                    SpellType = SpellType.SeventhLevel,
                     MagicSchool = "Evocation",
                     Range = "150 feet",
                     CastingTime = "1 action",
@@ -184,7 +184,7 @@ namespace DungeonsAndDragons.DataAccess.Data
                 {
                     Name = "Fireball",
                     Source = "Player's Handbook",
-                    SpellType = Type.EighthLevel,
+                    SpellType = SpellType.EighthLevel,
                     MagicSchool = "Evocation",
                     Range = "150 feet",
                     CastingTime = "1 action",
@@ -203,7 +203,7 @@ namespace DungeonsAndDragons.DataAccess.Data
                 {
                     Name = "Fireball",
                     Source = "Player's Handbook",
-                    SpellType = Type.NinthLevel,
+                    SpellType = SpellType.NinthLevel,
                     MagicSchool = "Evocation",
                     Range = "150 feet",
                     CastingTime = "1 action",

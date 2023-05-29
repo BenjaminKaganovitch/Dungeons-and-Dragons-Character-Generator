@@ -11,4 +11,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DungeonsAndDragons.DataAccess\DungeonsAndDragons.DataAccess.csproj" />
+    <ProjectReference Include="..\DungeonsAndDragons.Domain\DungeonsAndDragons.Domain.csproj" />
+  </ItemGroup>
 </Project>

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using DungeonsAndDragons.Identity;
 using DungeonsAndDragons.DataAccess;
-using DungeonsAndDragons.DataAccess.Data;
+using DungeonsAndDragons.Services;
 
 namespace DungeonsAndDragons
 {

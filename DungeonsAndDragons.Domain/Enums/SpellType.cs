@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DungeonsAndDragons.Domain
 {
-    public enum Type
+    public enum SpellType
     {
         Cantrip,
         [Display(Name="1st-level")]
