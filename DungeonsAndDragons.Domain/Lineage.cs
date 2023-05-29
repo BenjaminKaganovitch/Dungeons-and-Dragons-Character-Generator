@@ -14,7 +14,6 @@ namespace DungeonsAndDragons.Domain
 		public string Description { get; set; } = null!;
 		public string? CreatorId { get; set; }
 		public UserLeadEntity? Creator { get; set; }
-		public string Size { get; set; } = null!;
 		public ICollection<StatBoost> StatBoosts { get; set; } = new List<StatBoost>();
 		public ICollection<Feature> Features { get; set; } = new List<Feature>();
 		public ICollection<Sublineage> Sublineages { get; set; } = new List<Sublineage>();
