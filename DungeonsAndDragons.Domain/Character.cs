@@ -19,13 +19,13 @@ namespace DungeonsAndDragons.Domain
 		public Lineage Lineage { get; set; } = null!;
 		public int SublineageId { get; set; }
 		public Sublineage Sublineage { get; set; } = null!;
-		public IEnumerable<Background> Backgrounds { get; set; } = null!;
-		public IEnumerable<CharacterClass> Classes { get; set; } = null!;
-		public IEnumerable<CharacterStat> Stats { get; set; } = null!;
-		public IEnumerable<CharacterSkill> Skills { get; set; } = null!;
-		public IEnumerable<SavingThrow> SavingThrows { get; set; } = null!;
-		public IEnumerable<Spell>? Spells { get; set; }
-		public IEnumerable<Feat>? Feats { get; set; }
+		public ICollection<Background> Backgrounds { get; set; } = new List<Background>();
+		public ICollection<CharacterClass> Classes { get; set; } = new List<CharacterClass>();
+		public ICollection<CharacterStat> Stats { get; set; } = new List<CharacterStat>();
+		public ICollection<CharacterSkill> Skills { get; set; } = new List<CharacterSkill>();
+		public ICollection<SavingThrow> SavingThrows { get; set; } = new List<SavingThrow>();
+		public ICollection<Spell> Spells { get; set; } = new List<Spell>();
+		public ICollection<Feat> Feats { get; set; } = new List<Feat>();
 
 		//Roleplay character info
 		public string Age { get; set; } = null!;
@@ -43,7 +43,7 @@ namespace DungeonsAndDragons.Domain
 		public string AlliesAndOrganizations { get; set; } = null!;
 		public string AdditionalTraitsAndFeatures { get; set; } = null!;
 		public string Treasure { get; set; } = null!;
-		public IEnumerable<Language> Languages { get; set; } = null!;
+		public ICollection<Language> Languages { get; set; } = new List<Language>();
 
 		public int TotalLevels() 
 		{

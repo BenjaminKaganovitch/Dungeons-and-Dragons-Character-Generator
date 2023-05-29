@@ -15,8 +15,9 @@ namespace DungeonsAndDragons.Domain
 		public string? CreatorId { get; set; }
 		public UserLeadEntity? Creator { get; set; }
 		public Size Size { get; set; }
-		public IEnumerable<Feature> Features { get; set; } = null!;
-		public IEnumerable<StatBoost> StatBoosts { get; set; } = null!;
-		public IEnumerable<Spell> Spells { get; set; } = null!;
+		public string MovementSpeed { get; set; } = null!;
+		public ICollection<Feature> Features { get; set; } = new List<Feature>();
+		public ICollection<StatBoost> StatBoosts { get; set; } = new List<StatBoost>();
+		public ICollection<Spell> Spells { get; set; } = new List<Spell>();
 	}
 }

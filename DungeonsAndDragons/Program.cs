@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using DungeonsAndDragons.Identity;
 using DungeonsAndDragons.DataAccess;
-using DungeonsAndDragons.DataAccess.Data;
+using DungeonsAndDragons.Services;
 
 namespace DungeonsAndDragons
 {
@@ -43,15 +43,16 @@ namespace DungeonsAndDragons
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseRouting();
-                        app.UseAuthentication();;
-
+            app.UseRouting(); 
+            
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
+
             app.Run();
         }
     }

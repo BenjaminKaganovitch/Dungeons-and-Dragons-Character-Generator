@@ -14,6 +14,6 @@ namespace DungeonsAndDragons.Domain
 		public string Name { get; set; } = null!;
 		public string Source { get; set; } = null!;
 		public string Description { get; set; } = null!;
-        public IEnumerable<Feature> Features {get;set;} = null!;
+        public ICollection<Feature> Features { get; set; } = new List<Feature>();
 	}
 }
