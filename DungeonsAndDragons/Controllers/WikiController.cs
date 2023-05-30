@@ -46,5 +46,25 @@ namespace DungeonsAndDragons.Controllers
             }
             return View(feat);
         }
+        public IActionResult WikiLineagePage(int id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Lineage lineage = _db.Lineages
+                .Include(l=>l.Creator)
+                .Include(l => l.Sublineages).ThenInclude(s=>s.Features)
+                .Include(l => l.Sublineages).ThenInclude(s => s.Spells)
+                .Include(l => l.Sublineages).ThenInclude(s => s.StatBoosts)
+                .Include(l => l.StatBoosts)
+                .Include(l => l.Features)
+                .FirstOrDefault(l => l.Id == id);
+            if (lineage == null)
+            {
+                return NotFound();
+            }
+            return View(lineage);
+        }
     }
 }
