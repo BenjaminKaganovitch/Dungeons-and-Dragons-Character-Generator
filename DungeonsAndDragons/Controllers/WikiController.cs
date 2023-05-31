@@ -52,11 +52,12 @@ namespace DungeonsAndDragons.Controllers
             {
                 return NotFound();
             }
-            Lineage lineage = _db.Lineages
+            Lineage? lineage = _db.Lineages
                 .Include(l=>l.Creator)
                 .Include(l => l.Sublineages).ThenInclude(s=>s.Features)
                 .Include(l => l.Sublineages).ThenInclude(s => s.Spells)
                 .Include(l => l.Sublineages).ThenInclude(s => s.StatBoosts)
+                .Include(l => l.Sublineages).ThenInclude(s => s.Creator)
                 .Include(l => l.StatBoosts)
                 .Include(l => l.Features)
                 .FirstOrDefault(l => l.Id == id);

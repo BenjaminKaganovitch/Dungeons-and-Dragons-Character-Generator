@@ -5,7 +5,7 @@
 <div class="center">
     <h2>@Model.Name</h2>
     @if(Model.Creator!=null){
-        <p>Created by: <a asp-action="" asp-route-id="@Model.Creator.Id">@Model.Creator.FirstName @Model.Creator.LastName</a></p>
+        <p>Created by: <a asp-action="" asp-route-id="@Model.Creator.Id">@Model.Creator.UserName</a></p>
     }
     <p>Spell Type: @Model.SpellType</p>
     <p>School of Magic: @Model.MagicSchool</p>
