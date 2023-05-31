@@ -270,162 +270,280 @@ namespace DungeonsAndDragons.Services
                 //To be added later
                 #region Lineages
 
-                // Lineage human = new()
-                // {
-                //     Name = "Human",
-                //     Source = "Basic Rules",
-                //     Description = "Humans are the most common and widespread race in many fantasy settings. They come in " +
-                //                   "various ethnicities and cultures, displaying a wide range of appearances, beliefs, and" +
-                //                   " abilities. Humans are adaptable and versatile, capable of excelling in various " +
-                //                   "professions and roles.",
-                //     Sublineages = new List<Sublineage>()
-                //     {
-                //         new()
-                //         {
-                //             Name = "Standard Human",
-                //             Source = "Basic Rules",
-                //             Size = Size.Medium,
-                //             MovementSpeed = "30 feet (walking)",
-                //             StatBoosts = new List<StatBoost>()
-                //             {
-                //                 new(){Stat = Stat.Strength, Value = 1},
-                //                 new(){Stat = Stat.Dexterity, Value = 1},
-                //                 new(){Stat = Stat.Constitution, Value = 1},
-                //                 new(){Stat = Stat.Intelligence, Value = 1},
-                //                 new(){Stat = Stat.Wisdom, Value = 1},
-                //                 new(){Stat = Stat.Charisma, Value = 1}
-                //             }
-                //         },
-                //         new()
-                //         {
-                //             Name = "Variant Human",
-                //             Source = "Basic Rules",
-                //             Size = Size.Medium,
-                //             MovementSpeed = "30 feet (walking)",
-                //             StatBoosts = new List<StatBoost>()
-                //             {
-                //                 new() {Stat = Stat.Any, Value = 1},
-                //                 new() {Stat = Stat.Any, Value = 1}
-                //             },
-                //             Features = new List<Feature>()
-                //             {
-                //                 new() {Name = "Feat", Description = "You gain one Feat of your choice."}
-                //             }
-                //             
-                //         }
-                //     }
-                // };
-                //
-                // Lineage dwarf = new()
-                // {
-                //     Name = "Dwarf",
-                //     Source = "Basic Rules",
-                //     Description = "Dwarves are a short and stout humanoid race known for their craftsmanship, resilience," +
-                //                   " and affinity for mining and underground life. They are often associated with " +
-                //                   "mountains and have a reputation for their love of ale and strong spirits.",
-                //     StatBoosts = new List<StatBoost>()
-                //     {
-                //         new() { Stat = Stat.Constitution, Value = 2 }
-                //     },
-                //     Features = new List<Feature>()
-                //     {
-                //         new()
-                //         {
-                //             Name = "Darkvision",
-                //             Description = "Accustomed to life underground, you have superior vision in dark and dim " +
-                //                           "conditions. You can see in dim light within 60 feet of you as if it were " +
-                //                           "bright light, and in darkness as if it were dim light. You can’t discern " +
-                //                           "color in darkness, only shades of gray."
-                //         },
-                //         new()
-                //         {
-                //             Name = "Dwarven Resilience",
-                //             Description = "You have advantage on saving throws against poison, and you have " +
-                //                           "resistance against poison damage."
-                //         },
-                //         new()
-                //         {
-                //             Name = "Dwarven Combat Training",
-                //             Description = "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
-                //         },
-                //         new()
-                //         {
-                //             Name = "Tool Proficiency",
-                //             Description = "You gain proficiency with the artisan’s tools of your choice: smith’s tools, " +
-                //                           "brewer’s supplies, or mason’s tools."
-                //         },
-                //         new()
-                //         {
-                //             Name = "Stonecunning",
-                //             Description = "Whenever you make an Intelligence (History) check related to the origin of " +
-                //                           "stonework, you are considered proficient in the History skill and add double " +
-                //                           "your proficiency bonus to the check, instead of your normal proficiency bonus."
-                //         }
-                //     },
-                //     Sublineages = new List<Sublineage>()
-                //     {
-                //         new()
-                //         {
-                //             Name = "Hill Dwarf",
-                //             Source = "Basic Rules",
-                //             Size = Size.Medium,
-                //             MovementSpeed = "25 feet (walking)",
-                //             Description = "As a hill dwarf, you have keen senses, deep intuition, and remarkable " +
-                //                           "resilience. The gold dwarves of Faerun in their mighty southern kingdom " +
-                //                           "are hill dwarves, as are the exiled Neidar and the debased Klar of " +
-                //                           "Krynn in the Dragonlance setting.",
-                //             StatBoosts = new List<StatBoost>()
-                //             {
-                //                 new() { Stat = Stat.Wisdom, Value = 1 }
-                //             },
-                //             Features = new List<Feature>()
-                //             {
-                //                 new()
-                //                 {
-                //                     Name = "Dwarven Toughness",
-                //                     Description = "Your hit point maximum increases by 1, and it increases by 1 every " +
-                //                                   "time you gain a level."
-                //                 }
-                //             }
-                //         },
-                //         new()
-                //         {
-                //             Name = "Mountain Dwarf",
-                //             Source = "Basic Rules",
-                //             Size = Size.Medium,
-                //             MovementSpeed = "25 feet (walking)",
-                //             Description = "As a mountain dwarf, you’re strong and hardy, " +
-                //                           "accustomed to a difficult life in rugged terrain. You’re " +
-                //                           "probably on the tall side (for a dwarf), and tend toward " +
-                //                           "lighter coloration. The shield dwarves of northern " +
-                //                           "Faerûn, as well as the ruling Hylar clan and the noble" +
-                //                           "Daewar clan of Dragonlance, are mountain dwarves.",
-                //             StatBoosts = new List<StatBoost>()
-                //             {
-                //                 new() { Stat = Stat.Strength, Value = 2 }
-                //             },
-                //             Features = new List<Feature>()
-                //             {
-                //                 new()
-                //                 {
-                //                     Name = "Dwarven Armor Training",
-                //                     Description = "You have proficiency with light and medium armor."
-                //                 }
-                //             }
-                //         }
-                //     }
-                // };
+                Lineage human = new()
+                {
+                    Name = "Human",
+                    Source = "Basic Rules",
+                    Description = "Humans are the most common and widespread race in many fantasy settings. They come in " +
+                                  "various ethnicities and cultures, displaying a wide range of appearances, beliefs, and" +
+                                  " abilities. Humans are adaptable and versatile, capable of excelling in various " +
+                                  "professions and roles.",
+                    Sublineages = new List<Sublineage>()
+                    {
+                        new()
+                        {
+                            Name = "Standard Human",
+                            Source = "Basic Rules",
+                            Size = Size.Medium,
+                            MovementSpeed = "30 feet (walking)",
+                            StatBoosts = new List<StatBoost>()
+                            {
+                                new(){Stat = Stat.Strength, Value = 1},
+                                new(){Stat = Stat.Dexterity, Value = 1},
+                                new(){Stat = Stat.Constitution, Value = 1},
+                                new(){Stat = Stat.Intelligence, Value = 1},
+                                new(){Stat = Stat.Wisdom, Value = 1},
+                                new(){Stat = Stat.Charisma, Value = 1}
+                            }
+                        },
+                        new()
+                        {
+                            Name = "Variant Human",
+                            Source = "Basic Rules",
+                            Size = Size.Medium,
+                            MovementSpeed = "30 feet (walking)",
+                            StatBoosts = new List<StatBoost>()
+                            {
+                                new() {Stat = Stat.Any, Value = 1},
+                                new() {Stat = Stat.Any, Value = 1}
+                            },
+                            Features = new List<Feature>()
+                            {
+                                new() {Name = "Feat", Description = "You gain one Feat of your choice."}
+                            }
+                            
+                        }
+                    }
+                };
+                                Lineage dwarf = new()
+                {
+                    Name = "Dwarf",
+                    Source = "Basic Rules",
+                    Description = "Dwarves are a short and stout humanoid race known for their craftsmanship, resilience," +
+                                  " and affinity for mining and underground life. They are often associated with " +
+                                  "mountains and have a reputation for their love of ale and strong spirits.",
+                    StatBoosts = new List<StatBoost>()
+                    {
+                        new() { Stat = Stat.Constitution, Value = 2 }
+                    },
+                    Features = new List<Feature>()
+                    {
+                        new()
+                        {
+                            Name = "Darkvision",
+                            Description = "Accustomed to life underground, you have superior vision in dark and dim " +
+                                          "conditions. You can see in dim light within 60 feet of you as if it were " +
+                                          "bright light, and in darkness as if it were dim light. You can’t discern " +
+                                          "color in darkness, only shades of gray."
+                        },
+                        new()
+                        {
+                            Name = "Dwarven Resilience",
+                            Description = "You have advantage on saving throws against poison, and you have " +
+                                          "resistance against poison damage."
+                        },
+                        new()
+                        {
+                            Name = "Dwarven Combat Training",
+                            Description = "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
+                        },
+                        new()
+                        {
+                            Name = "Tool Proficiency",
+                            Description = "You gain proficiency with the artisan’s tools of your choice: smith’s tools, " +
+                                          "brewer’s supplies, or mason’s tools."
+                        },
+                        new()
+                        {
+                            Name = "Stonecunning",
+                            Description = "Whenever you make an Intelligence (History) check related to the origin of " +
+                                          "stonework, you are considered proficient in the History skill and add double " +
+                                          "your proficiency bonus to the check, instead of your normal proficiency bonus."
+                        }
+                    },
+                    Sublineages = new List<Sublineage>()
+                    {
+                        new()
+                        {
+                            Name = "Hill Dwarf",
+                            Source = "Basic Rules",
+                            Size = Size.Medium,
+                            MovementSpeed = "25 feet (walking)",
+                            Description = "As a hill dwarf, you have keen senses, deep intuition, and remarkable " +
+                                          "resilience. The gold dwarves of Faerun in their mighty southern kingdom " +
+                                          "are hill dwarves, as are the exiled Neidar and the debased Klar of " +
+                                          "Krynn in the Dragonlance setting.",
+                            StatBoosts = new List<StatBoost>()
+                            {
+                                new() { Stat = Stat.Wisdom, Value = 1 }
+                            },
+                            Features = new List<Feature>()
+                            {
+                                new()
+                                {
+                                    Name = "Dwarven Toughness",
+                                    Description = "Your hit point maximum increases by 1, and it increases by 1 every " +
+                                                  "time you gain a level."
+                                }
+                            }
+                        },
+                        new()
+                        {
+                            Name = "Mountain Dwarf",
+                            Source = "Basic Rules",
+                            Size = Size.Medium,
+                            MovementSpeed = "25 feet (walking)",
+                            Description = "As a mountain dwarf, you’re strong and hardy, " +
+                                          "accustomed to a difficult life in rugged terrain. You’re " +
+                                          "probably on the tall side (for a dwarf), and tend toward " +
+                                          "lighter coloration. The shield dwarves of northern " +
+                                          "Faerûn, as well as the ruling Hylar clan and the noble" +
+                                          "Daewar clan of Dragonlance, are mountain dwarves.",
+                            StatBoosts = new List<StatBoost>()
+                            {
+                                new() { Stat = Stat.Strength, Value = 2 }
+                            },
+                            Features = new List<Feature>()
+                            {
+                                new()
+                                {
+                                    Name = "Dwarven Armor Training",
+                                    Description = "You have proficiency with light and medium armor."
+                                }
+                            }
+                        }
+                    }
+                };
 
                 #endregion
 
                 #region Classes
 
-                // Class wizard = new()
-                // {
-                //     Name = "Wizard",
-                //     Source = "Basic Rules",
-                //     Description = ""
-                // };
+                Class wizard = new()
+                {
+                    Name = "Wizard",
+                    Source = "Basic Rules",
+                    Description = "Wizards are scholarly spellcasters who study and manipulate arcane magic through " +
+                                  "rigorous study and research. They possess a vast knowledge of spells and can cast " +
+                                  "a wide range of magical effects. Wizards are known for their spellbooks, which " +
+                                  "contain their collected arcane knowledge, and they can specialize in specific " +
+                                  "schools of magic or become versatile generalists.",
+                    HitDieType = DieType.SixSides,
+                    Features = new List<Feature>()
+                    {
+                        #region Spellcasting
+                        
+                        new()
+                        {
+                            Name = "Spellcasting",
+                            Description = "As a student of arcane magic, you have a spellbook containing spells that " +
+                                          "show the first glimmerings of your true power."
+                        },
+                        new()
+                        {
+                            Name = "Cantrips",
+                            Description = "At 1st level, you know three cantrips of your choice from the wizard spell " +
+                                          "list. You learn additional wizard cantrips of your choice at higher levels, " +
+                                          "as shown in the Cantrips Known column of the Wizard table."
+                        },
+                        new()
+                        {
+                            Name = "Spellbook",
+                            Description = "At 1st level, you have a spellbook containing six 1st-level wizard spells " +
+                                          "of your choice. Your spellbook is the repository of the wizard spells you " +
+                                          "know, except your cantrips, which are fixed in your mind."
+                        },
+                        new() 
+                        {
+                            Name = "Preparing and Casting Spells",
+                            Description = "The Wizard table shows how many spell slots you have to cast your spells " +
+                                          "of 1st level and higher. To cast one of these spells, you must expend a " +
+                                          "slot of the spell’s level or higher. You regain all expended spell slots " +
+                                          "when you finish a long rest.\nYou prepare the list of wizard spells that " +
+                                          "are available for you to cast. To do so, choose a number of wizard spells" +
+                                          "from your spellbook equal to your Intelligence modifier + your wizard " +
+                                          "level (minimum of one spell). The spells must be of a level for which " +
+                                          "you have spell slots. \nFor example, if you’re a 3rd-level wizard, you " +
+                                          "have four 1st-level and two 2nd-level spell slots. With an Intelligence " +
+                                          "of 16, your list of prepared spells can include six spells of 1st or 2nd " +
+                                          "level, in any combination, chosen from your spellbook. If you prepare the " +
+                                          "1st-level spell Magic Missile, you can cast it using a 1st-level or a " +
+                                          "2nd-level slot. Casting the spell doesn’t remove it from your list " +
+                                          "of prepared spells.\nYou can change your list of prepared spells when " +
+                                          "you finish a long rest. Preparing a new list of wizard spells requires " +
+                                          "time spent studying your spellbook and memorizing the incantations " +
+                                          "and gestures you must make to cast the spell: at least 1 minute per " +
+                                          "spell level for each spell on your list."
+                        },
+                        new()
+                        {
+                            Name = "Spellcasting Ability",
+                            Description = "Intelligence is your spellcasting ability for your wizard spells, " +
+                                          "since you learn your spells through dedicated study and memorization. " +
+                                          "You use your Intelligence whenever a spell refers to your spellcasting " +
+                                          "ability. In addition, you use your Intelligence modifier when setting " +
+                                          "the saving throw DC for a wizard spell you cast and when making an " +
+                                          "attack roll with one. \n" +
+                                          "Spell save DC = 8 + your proficiency bonus + your Intelligence modifier\n" +
+                                          "Spell attack modifier = your proficiency bonus + your Intelligence modifier"
+                        },
+                        new()
+                        {
+                            Name = "Ritual Casting",
+                            Description = "You can cast a wizard spell as a ritual if that spell has the ritual tag " +
+                                          "and you have the spell in your spellbook. You don’t need to have the " +
+                                          "spell prepared."
+                        },
+                        new()
+                        {
+                            Name = "Spellcasting Focus",
+                            Description = "You can use an arcane focus as a spellcasting focus for your wizard spells."
+                        },
+                        new()
+                        {
+                            Name = "Learning Spells of 1st Level and Higher",
+                            Description = "Each time you gain a wizard level, you can add two wizard spells of " +
+                                          "your choice to your spellbook for free. Each of these spells must be " +
+                                          "of a level for which you have spell slots, as shown on the Wizard " +
+                                          "table. On your adventures, you might find other spells that you can " +
+                                          "add to your spellbook."
+                        }
+
+                        #endregion
+                        
+                    },
+                    Spells = new List<Spell>()
+                    {
+                        fireballCantrip, fireballFirstLevel, fireballSecondLevel, fireball,
+                        fireballFourthLevel, fireballFifthLevel, fireballSixthLevel, fireballSeventhLevel,
+                        fireballEighthLevel, fireballNinthLevel
+                    },
+                    Subclasses = new List<Subclass>()
+                    {
+                        new()
+                        {
+                            Name = "School of Evocation",
+                            Source = "Basic Rules",
+                            Description = "You focus your study on magic that creates powerful elemental effects " +
+                                          "such as bitter cold, searing flame, rolling thunder, crackling lightning, " +
+                                          "and burning acid. Some evokers find employment in military forces, serving " +
+                                          "as artillery to blast enemy armies from afar. Others use their " +
+                                          "spectacular power to protect the weak, while some seek their own " +
+                                          "gain as bandits, adventurers, or aspiring tyrants.",
+                            Features = new List<Feature>()
+                            {
+                                new()
+                                {
+                                    Name = "Evocation Savant", 
+                                    Description = "Beginning when you select this school at 2nd level, the " +
+                                                  "gold and time you must spend to copy a Evocation spell into " +
+                                                  "your spellbook is halved."
+                                }    
+                            }
+                        }
+                    }
+                    
+                };
 
                 #endregion
                 
@@ -433,6 +551,8 @@ namespace DungeonsAndDragons.Services
                                         fireball, fireballFourthLevel, fireballFifthLevel, fireballSixthLevel,
                                         fireballSeventhLevel, fireballEighthLevel, fireballNinthLevel);
                 context.Feats.AddRange(sentinel, lucky, alert);
+                context.Lineages.AddRange(human, dwarf);
+                context.Classes.Add(wizard);
 
                 context.SaveChanges();
             }
