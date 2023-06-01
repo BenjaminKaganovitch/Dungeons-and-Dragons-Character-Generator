@@ -1,0 +1,65 @@
+﻿@using DungeonsAndDragons.Domain
+@model Class
+
+@*
+public string Name { get; set; } = null!;
+public DieType HitDieType { get; set; }
+public string Description { get; set; } = null!;
+//Not all classes can use spells, so this is nullable
+public ICollection<Feature> Features { get; set; } = new List<Feature>();
+public ICollection<Spell> Spells { get; set; } = new List<Spell>();
+public ICollection<Subclass> Subclasses { get; set; } = new List<Subclass>
+public string Source { get; set; } = null!;
+*@
+
+
+<div class="center">
+	<h2>@Model.Name</h2>
+	<p>@Model.Description</p>
+    @if(Model.Spells != null){
+        <div>
+            @foreach (Spell sp in Model.Spells)
+            {
+                <p><a asp-action="WikiSpellPage" asp-route-id="@sp.Id">@sp.Name</a></p>
+            }
+        </div>
+    }
+    <div>
+        @foreach (Feature f in Model.Features)
+        {
+                <div>
+                    <h3>@f.Name</h3>
+                    <p>@f.Description</p>
+                </div>
+        }
+    </div>
+    <div>
+        @foreach (Subclass s in Model.Subclasses)
+        {
+            <div>
+                <h2>@s.Name</h2>
+                <p>@s.Description</p>
+                @if (s.Creator != null)
+                {
+                    <p>Created by: <a asp-action="" asp-route-id="@s.Creator.Id">@s.Creator.UserName</a></p>
+                }
+                <div>
+                    @foreach (Feature f in s.Features)
+                    {
+                            <div>
+                                <h3>@f.Name</h3>
+                                <p>@f.Description</p>
+                            </div>
+                    }
+                </div>
+                <div>
+                    @foreach(Spell sp in s.Spells){
+                        <p><a asp-action="WikiSpellPage" asp-route-id="@sp.Id">@sp.Name</a></p>
+                    }
+                </div>
+                <p>Source: @s.Source</p>
+            </div>
+        }
+    </div>
+    <p>Source: @Model.Source</p>
+</div>

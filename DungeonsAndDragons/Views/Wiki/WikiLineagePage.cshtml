@@ -1,0 +1,61 @@
+﻿@using DungeonsAndDragons.Domain
+@model Lineage
+
+
+<div class="center">
+    <h2>@Model.Name</h2>
+    <p>@Model.Description</p>
+    @if (Model.Creator != null)
+    {
+            <p>Created by: <a asp-action="" asp-route-id="@Model.Creator.Id">@Model.Creator.UserName</a></p>
+    }
+    <div>
+        @foreach(StatBoost sb in Model.StatBoosts){
+            <p><b>@sb.Stat</b> <i>@sb.Value</i></p>
+        }
+    </div>
+    <div>
+        @foreach (Feature f in Model.Features)
+        {
+            <div>
+                <h3>@f.Name</h3>
+                <p>@f.Description</p>
+            </div>
+        }
+    </div>
+    <div>
+        @foreach (Sublineage s in Model.Sublineages)
+        {
+            <div>
+                <h2>@s.Name</h2>
+                <p>@s.Description</p>
+                <p>Source: @s.Source</p>
+                @if (s.Creator != null)
+                {
+                    <p>Created by: <a asp-action="" asp-route-id="@s.Creator.Id">@s.Creator.UserName</a></p>
+                }
+                <div>
+                    @foreach (StatBoost sb in s.StatBoosts)
+                    {
+                    <p><b>@sb.Stat</b> <i>@sb.Value</i></p>
+                    }
+                </div>
+                <div>
+                    @foreach (Feature f in s.Features)
+                    {
+                    <div>
+                        <h3>@f.Name</h3>
+                        <p>@f.Description</p>
+                    </div>
+                    }
+                </div>
+                @*<div>
+                    @foreach(Spell sp in s.Spells){
+                        <p><a asp-action="WikiSpellPage" asp-route-id="@sp.Id">@sp.Name</a></p>
+                    }
+                </div>*@
+            </div>
+        }
+    </div>
+    <p>Source: @Model.Source</p>
+</div>
