@@ -67,5 +67,20 @@ namespace DungeonsAndDragons.Controllers
             }
             return View(lineage);
         }
+
+        public IActionResult WikiClassPage(int id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Class? theclass = _db.Classes
+                .FirstOrDefault(c => c.Id == id);
+            if (theclass == null)
+            {
+                return NotFound();
+            }
+            return View(theclass);
+        }
     }
 }
