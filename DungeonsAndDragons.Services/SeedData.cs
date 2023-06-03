@@ -442,6 +442,7 @@ namespace DungeonsAndDragons.Services
                                   "contain their collected arcane knowledge, and they can specialize in specific " +
                                   "schools of magic or become versatile generalists.",
                     HitDieType = DieType.SixSides,
+                    SubclassUnlockLevel = 2,
                     Features = new List<Feature>()
                     {
                         #region Spellcasting
@@ -520,10 +521,43 @@ namespace DungeonsAndDragons.Services
                                           "of a level for which you have spell slots, as shown on the Wizard " +
                                           "table. On your adventures, you might find other spells that you can " +
                                           "add to your spellbook."
-                        }
+                        },
 
                         #endregion
                         
+                        new()
+                        {
+                            Name = "Arcane Recovery",
+                            Description = "You have learned to regain some of your magical energy by studying " +
+                                          "your spellbook. Once per day when you finish a short rest, you can " +
+                                          "choose expended spell slots to recover. The spell slots can have a " +
+                                          "combined level that is equal to or less than half your wizard level" +
+                                          " (rounded up), and none of the slots can be 6th level or higher. " +
+                                          "\nFor example, if you're a 4th-level wizard, you can recover up to " +
+                                          "two levels worth of spell slots. You can recover either a 2nd-level" +
+                                          " spell slot or two 1st-level spell slots."
+                        },
+                        new()
+                        {
+                            Name = "Arcane Tradition",
+                            Description = "When you reach 2nd level, you choose an arcane tradition, shaping " +
+                                          "your practice of magic through one of the following schools. Your " +
+                                          "choice grants you features at 2nd level and again at 6th, 10th, " +
+                                          "and 14th level."
+                        },
+                        new() 
+                        {
+                            Name = "Cantrip Formulas (Optional)",
+                            Description = "At 3rd level, you have scribed a set of arcane formulas in your " +
+                                          "spellbook that you can use to formulate a cantrip in your mind. " +
+                                          "Whenever you finish a long rest and consult those formulas in " +
+                                          "your spellbook, you can replace one wizard cantrip you know " +
+                                          "with another cantrip from the wizard spell list."
+                        },
+                        new()
+                        {
+                            Name = "Ability Score Improvement"
+                        }
                     },
                     Spells = new List<Spell>()
                     {
