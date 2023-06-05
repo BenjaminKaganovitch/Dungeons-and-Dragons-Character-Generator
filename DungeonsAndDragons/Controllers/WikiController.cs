@@ -109,6 +109,9 @@ namespace DungeonsAndDragons.Controllers
 
         }
 
-        
+        public IActionResult Lineages()
+        {
+            return View(_db.Lineages.ToArray());
+        }
     }
 }
