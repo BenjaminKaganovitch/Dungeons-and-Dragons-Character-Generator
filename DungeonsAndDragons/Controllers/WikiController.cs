@@ -113,5 +113,13 @@ namespace DungeonsAndDragons.Controllers
         {
             return View(_db.Lineages.ToArray());
         }
+        public IActionResult Classes()
+        {
+            return View(_db.Classes.ToArray());
+        }
+        public IActionResult Feats()
+        {
+            return View(_db.Feats.ToArray());
+        }
     }
 }

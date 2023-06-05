@@ -1,0 +1,11 @@
+﻿@using DungeonsAndDragons.Domain
+@model Feat[]
+
+<div class="center">
+    <ul>
+        @foreach (var spu in Model)
+        {
+            <li><a asp-action="wikispellpage" asp-route-id="@spu.Id">@spu.Name</a></li>
+        }
+    </ul>
+</div>
