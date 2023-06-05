@@ -1,0 +1,10 @@
+﻿@using DungeonsAndDragons.Domain
+@model Spell[]
+
+<div class="center">
+    <ul>
+        @foreach(Spell spu in Model){
+            <li><a asp-action="wikispellpage" asp-route-id="@spu.Id">@spu.Name</a></li>
+        }
+    </ul>
+</div>

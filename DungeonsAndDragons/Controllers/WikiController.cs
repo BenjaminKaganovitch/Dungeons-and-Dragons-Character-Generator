@@ -75,12 +75,51 @@ namespace DungeonsAndDragons.Controllers
                 return NotFound();
             }
             Class? theclass = _db.Classes
+                .Include(c=>c.Features)
+                .Include(c=>c.Spells)
+                .Include(c=>c.Subclasses).ThenInclude(s=>s.Spells)
+                .Include(c => c.Subclasses).ThenInclude(s => s.Features)
+                .Include(c => c.Subclasses).ThenInclude(s => s.Creator)
                 .FirstOrDefault(c => c.Id == id);
             if (theclass == null)
             {
                 return NotFound();
             }
             return View(theclass);
+        }
+
+        public IActionResult Spells(string id)
+        {
+            try
+            {
+                if(id == null)
+                {
+                    return View(_db.Spells.ToArray());
+                }
+                SpellType type = Enum.Parse<SpellType>(id);
+
+                Spell[] spells = _db.Spells.Where(spell => spell.SpellType == type).ToArray();
+
+                return View(spells);
+            }
+            catch (System.ArgumentException)
+            {
+                return NotFound();
+            }
+
+        }
+
+        public IActionResult Lineages()
+        {
+            return View(_db.Lineages.ToArray());
+        }
+        public IActionResult Classes()
+        {
+            return View(_db.Classes.ToArray());
+        }
+        public IActionResult Feats()
+        {
+            return View(_db.Feats.ToArray());
         }
     }
 }
