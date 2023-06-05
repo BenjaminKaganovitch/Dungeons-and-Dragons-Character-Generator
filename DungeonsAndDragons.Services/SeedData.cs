@@ -274,48 +274,61 @@ namespace DungeonsAndDragons.Services
                 {
                     Name = "Human",
                     Source = "Basic Rules",
-                    Description = "Humans are the most common and widespread race in many fantasy settings. They come in " +
-                                  "various ethnicities and cultures, displaying a wide range of appearances, beliefs, and" +
-                                  " abilities. Humans are adaptable and versatile, capable of excelling in various " +
-                                  "professions and roles.",
+                    Description =
+                        "Humans are the most common and widespread race in many fantasy settings. They come in " +
+                        "various ethnicities and cultures, displaying a wide range of appearances, beliefs, and" +
+                        " abilities. Humans are adaptable and versatile, capable of excelling in various " +
+                        "professions and roles.",
                     Sublineages = new List<Sublineage>()
                     {
                         new()
                         {
                             Name = "Standard Human",
                             Source = "Basic Rules",
+                            Description =
+                                "Bog-standard humans. While unremarkable in terms of unique features, standard" +
+                                " humans have more of a balance in their abilities compared to other lineages.",
                             Size = Size.Medium,
                             MovementSpeed = "30 feet (walking)",
                             StatBoosts = new List<StatBoost>()
                             {
-                                new(){Stat = Stat.Strength, Value = 1},
-                                new(){Stat = Stat.Dexterity, Value = 1},
-                                new(){Stat = Stat.Constitution, Value = 1},
-                                new(){Stat = Stat.Intelligence, Value = 1},
-                                new(){Stat = Stat.Wisdom, Value = 1},
-                                new(){Stat = Stat.Charisma, Value = 1}
+                                new() { Stat = Stat.Strength, Value = 1 },
+                                new() { Stat = Stat.Dexterity, Value = 1 },
+                                new() { Stat = Stat.Constitution, Value = 1 },
+                                new() { Stat = Stat.Intelligence, Value = 1 },
+                                new() { Stat = Stat.Wisdom, Value = 1 },
+                                new() { Stat = Stat.Charisma, Value = 1 }
                             }
                         },
                         new()
                         {
                             Name = "Variant Human",
                             Source = "Basic Rules",
+                            Description = "If your campaign uses the optional feat rules from chapter 5 of the " +
+                                          "Player's Handbook, your Dungeon Master might allow these variant " +
+                                          "traits, all of which replace the human's Ability Score Increase trait.",
                             Size = Size.Medium,
                             MovementSpeed = "30 feet (walking)",
                             StatBoosts = new List<StatBoost>()
                             {
-                                new() {Stat = Stat.Any, Value = 1},
-                                new() {Stat = Stat.Any, Value = 1}
+                                new() { Stat = Stat.Any, Value = 1 },
+                                new() { Stat = Stat.Any, Value = 1 }
                             },
                             Features = new List<Feature>()
                             {
-                                new() {Name = "Feat", Description = "You gain one Feat of your choice."}
+                                new()
+                                {
+                                    Name = "Skills", 
+                                    Description = "You gain proficiency with one skill of your choice."
+                                },
+                                new() { Name = "Feat", Description = "You gain one Feat of your choice." }
                             }
-                            
+
                         }
                     }
                 };
-                                Lineage dwarf = new()
+                
+                Lineage dwarf = new()
                 {
                     Name = "Dwarf",
                     Source = "Basic Rules",
@@ -429,6 +442,7 @@ namespace DungeonsAndDragons.Services
                                   "contain their collected arcane knowledge, and they can specialize in specific " +
                                   "schools of magic or become versatile generalists.",
                     HitDieType = DieType.SixSides,
+                    SubclassUnlockLevel = 2,
                     Features = new List<Feature>()
                     {
                         #region Spellcasting
@@ -507,10 +521,43 @@ namespace DungeonsAndDragons.Services
                                           "of a level for which you have spell slots, as shown on the Wizard " +
                                           "table. On your adventures, you might find other spells that you can " +
                                           "add to your spellbook."
-                        }
+                        },
 
                         #endregion
                         
+                        new()
+                        {
+                            Name = "Arcane Recovery",
+                            Description = "You have learned to regain some of your magical energy by studying " +
+                                          "your spellbook. Once per day when you finish a short rest, you can " +
+                                          "choose expended spell slots to recover. The spell slots can have a " +
+                                          "combined level that is equal to or less than half your wizard level" +
+                                          " (rounded up), and none of the slots can be 6th level or higher. " +
+                                          "\nFor example, if you're a 4th-level wizard, you can recover up to " +
+                                          "two levels worth of spell slots. You can recover either a 2nd-level" +
+                                          " spell slot or two 1st-level spell slots."
+                        },
+                        new()
+                        {
+                            Name = "Arcane Tradition",
+                            Description = "When you reach 2nd level, you choose an arcane tradition, shaping " +
+                                          "your practice of magic through one of the following schools. Your " +
+                                          "choice grants you features at 2nd level and again at 6th, 10th, " +
+                                          "and 14th level."
+                        },
+                        new() 
+                        {
+                            Name = "Cantrip Formulas (Optional)",
+                            Description = "At 3rd level, you have scribed a set of arcane formulas in your " +
+                                          "spellbook that you can use to formulate a cantrip in your mind. " +
+                                          "Whenever you finish a long rest and consult those formulas in " +
+                                          "your spellbook, you can replace one wizard cantrip you know " +
+                                          "with another cantrip from the wizard spell list."
+                        },
+                        new()
+                        {
+                            Name = "Ability Score Improvement"
+                        }
                     },
                     Spells = new List<Spell>()
                     {
