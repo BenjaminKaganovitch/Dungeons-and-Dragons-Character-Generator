@@ -9,6 +9,11 @@ namespace DungeonsAndDragons.Controllers
 			return View();
 		}
 
+		public IActionResult CreateSpell()
+		{
+			return View();
+		}
+
         public IActionResult ViewHomebrew()
         {
             return View();
