@@ -13,6 +13,11 @@ namespace DungeonsAndDragons.Controllers
 		{
 			return View();
 		}
+		
+		public IActionResult CreateBackground()
+		{
+			return View();
+		}
 
         public IActionResult ViewHomebrew()
         {
