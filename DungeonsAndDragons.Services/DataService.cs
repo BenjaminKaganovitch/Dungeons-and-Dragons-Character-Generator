@@ -34,6 +34,28 @@ public class DataService : IDataService
         Stat.Intelligence,
         Stat.Charisma
     };
+
+    public static readonly string[] SkillNames =
+    {
+        "Acrobatics",
+        "Animal Handling",
+        "Arcana",
+        "Athletics",
+        "Deception",
+        "History",
+        "Insight",
+        "Intimidation",
+        "Investigation",
+        "Medicine",
+        "Nature",
+        "Perception",
+        "Performance",
+        "Persuasion",
+        "Religion",
+        "Sleight of Hand",
+        "Stealth",
+        "Survival"
+    };
     
     public Class GetClassById(int id)
     {
