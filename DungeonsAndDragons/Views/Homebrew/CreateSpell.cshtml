@@ -2,6 +2,7 @@
 @using DungeonsAndDragons.Services
 @model DungeonsAndDragons.Domain.Spell
 @{
+    ViewData["title"] = "Creating New Spell | D";
     SelectList schools = new(DataService.MagicSchools);
 }
 <script type="text/javascript" defer src="js/spell-creator.js"></script>>
