@@ -6,17 +6,18 @@
     body {
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       height: 100vh;
-      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
     
     .carousel {
       position: relative;
       height: 66vh;
-      width: 100%;
+      width: 60%; /* Set the desired width of the carousel */
+      margin: 0 auto; /* Center the carousel horizontally */
       overflow: hidden;
     }
     
@@ -32,30 +33,37 @@
       justify-content: center;
       align-items: center;
       background-color: #ccc;
+      border: 2px solid transparent;
+      transition: border-color 0.3s;
+    }
+    
+    .carousel-item.selected {
+      border-color: #fff;
     }
     
     .carousel-item img {
       max-height: 100%;
       max-width: 100%;
+      object-fit: contain; /* Ensure all images appear the same size */
     }
   </style>
 </head>
 <body>
   <div class="carousel">
     <div class="carousel-container">
-      <div class="carousel-item">
+      <div class="carousel-item" id="carousel-item-1">
         <img src="DragonImage.jpg" alt="Dragon Image">
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" id="carousel-item-2">
         <img src="DragonImage.jpg" alt="Dragon Image">
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" id="carousel-item-3">
         <img src="DragonImage.jpg" alt="Dragon Image">
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" id="carousel-item-4">
         <img src="DragonImage.jpg" alt="Dragon Image">
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" id="carousel-item-5">
         <img src="DragonImage.jpg" alt="Dragon Image">
       </div>
       <!-- Add more carousel items as needed -->
@@ -84,13 +92,21 @@
         updateCarousel();
       }
 
-      document.addEventListener('keydown', function(event) {
+      function fadeSelectedImage() {
+        carouselItems[selectedIndex].classList.add('fade', 'fade-in');
+      }
+
+      function handleKeyDown(event) {
         if (event.keyCode === 39) { // Right arrow key
           selectNextItem();
         } else if (event.keyCode === 37) { // Left arrow key
           selectPreviousItem();
+        } else if (event.keyCode === 13) { // Enter key
+          fadeSelectedImage();
         }
-      });
+      }
+
+      document.addEventListener('keydown', handleKeyDown);
     });
   </script>
 </body>
