@@ -1,187 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Character Creator</title>
+  <title>Carousel Example</title>
   <style>
     body {
       margin: 0;
       padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      background-image: url('DragonImage.jpg');
-      background-size: cover;
-      background-position: center;
-      backdrop-filter: blur(10px); /* Adjust the blur intensity as desired */
-      background-color: rgba(255, 255, 255, 0.5); /* Adjust the color and opacity as desired */
-    }
-
-
-    .container {
-      width: 80%;
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .carousel {
       overflow: hidden;
-      margin-bottom: 20px;
     }
-
-    .carousel .row {
-      white-space: nowrap;
-      overflow-x: hidden;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      transition: transform 0.3s ease-in-out;
-      width: 75%; 
-      height: 110px; 
+    
+    .carousel {
+      position: relative;
+      height: 66vh;
+      width: 100%;
+      overflow: hidden;
     }
-
-    .carousel .row.selected {
-      border: 2px solid blue;
+    
+    .carousel-container {
+      display: flex;
+      transition: transform 0.5s;
     }
-
-    .carousel .row img {
-      display: inline-block;
-      height: 100px; 
-      margin-right: 10px;
-      cursor: pointer;
+    
+    .carousel-item {
+      flex: 0 0 25%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ccc;
     }
-
-    .carousel .row img.selected {
-      transform: scale(1.1);
-      transition: transform 0.3s ease-in-out;
+    
+    .carousel-item img {
+      max-height: 100%;
+      max-width: 100%;
     }
-
-    .carousel .row img.previous {
-      transform: scale(0.9);
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .black-screen {
-    background-color: black;
-    color: white;
-    width: 75%; /* Updated width */
-    padding: 20px;
-    flex-grow: 1;
-  }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="black-screen">
-      Default Description
-    </div>
-
-    <div class="carousel">
-      <div class="row selected" id="1">
-        <img src="AbstractProgram.jpg" alt="Warrior">
-        <img src="AbstractProgram.jpg" alt="Mage">
-        <img src="AbstractProgram.jpg" alt="Rogue">
-        <img src="AbstractProgram.jpg" alt="Rogue">
+  <div class="carousel">
+    <div class="carousel-container">
+      <div class="carousel-item">
+        <img src="DragonImage.jpg" alt="Dragon Image">
       </div>
-      <div class="row" id="2">
-        <img src="AbstractProgram.jpg" alt="Tank">
-        <img src="AbstractProgram.jpg" alt="Healer">
-        <img src="AbstractProgram.jpg" alt="Support">
+      <div class="carousel-item">
+        <img src="DragonImage.jpg" alt="Dragon Image">
       </div>
-      <!-- Add more rows as needed -->
+      <div class="carousel-item">
+        <img src="DragonImage.jpg" alt="Dragon Image">
+      </div>
+      <div class="carousel-item">
+        <img src="DragonImage.jpg" alt="Dragon Image">
+      </div>
+      <div class="carousel-item">
+        <img src="DragonImage.jpg" alt="Dragon Image">
+      </div>
+      <!-- Add more carousel items as needed -->
     </div>
   </div>
 
   <script>
-    const carousel = document.querySelector('.carousel');
-    const blackScreen = document.querySelector('.black-screen');
-    let activeRow = carousel.querySelector('.row.selected') || carousel.querySelector('.row:first-child');
-    let selectedImageIndex = 0;
+    document.addEventListener('DOMContentLoaded', function() {
+      const carouselContainer = document.querySelector('.carousel-container');
+      const carouselItems = document.querySelectorAll('.carousel-item');
+      const numItems = carouselItems.length;
+      const itemWidth = carouselItems[0].offsetWidth;
+      let selectedIndex = 0;
 
-  function updateDescription() {
-  const rowId = activeRow.getAttribute('id');
-  if (rowId === '1') {
-    blackScreen.textContent = 'Description for Row 1';
-  } else if (rowId === '2') {
-    blackScreen.textContent = 'Description for Row 2';
-  } else {
-    blackScreen.textContent = 'Default Description';
-  }
-}
-
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'ArrowRight') {
-        // Scroll active row to the left
-        const images = activeRow.querySelectorAll('img');
-        images[selectedImageIndex].classList.remove('selected');
-        images[selectedImageIndex].classList.add('previous');
-        selectedImageIndex = (selectedImageIndex + 1) % images.length;
-        images[selectedImageIndex].classList.add('selected');
-        images[selectedImageIndex].classList.remove('previous');
-
-        // Scroll the row to bring the selected image into view
-        const selectedImage = images[selectedImageIndex];
-        const rowRect = activeRow.getBoundingClientRect();
-        const imageRect = selectedImage.getBoundingClientRect();
-        if (imageRect.right > rowRect.right) {
-          activeRow.scrollLeft += imageRect.right - rowRect.right;
-        } else if (imageRect.left < rowRect.left) {
-          activeRow.scrollLeft -= rowRect.left - imageRect.left;
-        }
-      } else if (event.key === 'ArrowLeft') {
-        // Scroll active row to the right
-        const images = activeRow.querySelectorAll('img');
-        images[selectedImageIndex].classList.remove('selected');
-        images[selectedImageIndex].classList.add('previous');
-        selectedImageIndex = (selectedImageIndex - 1 + images.length) % images.length;
-        images[selectedImageIndex].classList.add('selected');
-        images[selectedImageIndex].classList.remove('previous');
-
-        // Scroll the row to bring the selected image into view
-        const selectedImage = images[selectedImageIndex];
-        const rowRect = activeRow.getBoundingClientRect();
-        const imageRect = selectedImage.getBoundingClientRect();
-        if (imageRect.left < rowRect.left) {
-          activeRow.scrollLeft -= rowRect.left - imageRect.left;
-        } else if (imageRect.right > rowRect.right) {
-          activeRow.scrollLeft += imageRect.right - rowRect.right;
-        }
-      } else if (event.key === 'ArrowDown') {
-        // Switch to the next row
-        activeRow.classList.remove('selected');
-        activeRow = activeRow.nextElementSibling || carousel.querySelector('.row:first-child');
-        activeRow.classList.add('selected');
-        selectedImageIndex = 0; // Reset the selected image index when switching rows
-        const images = activeRow.querySelectorAll('img');
-        images[selectedImageIndex].classList.add('selected');
-        activeRow.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else if (event.key === 'ArrowUp') {
-        // Switch to the previous row
-        activeRow.classList.remove('selected');
-        activeRow = activeRow.previousElementSibling || carousel.querySelector('.row:last-child');
-        activeRow.classList.add('selected');
-        selectedImageIndex = 0;
-        const images = activeRow.querySelectorAll('img');
-        images[selectedImageIndex].classList.add('selected');
-        activeRow.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      function updateCarousel() {
+        carouselContainer.style.transform = `translateX(-${selectedIndex * itemWidth}px)`;
       }
 
-      // Update the description on image selection
-      updateDescription();
+      function selectNextItem() {
+        selectedIndex = (selectedIndex + 1) % numItems;
+        updateCarousel();
+      }
 
-      function playSoundEffect() {
-      // Add your sound effect logic here
-      // For example, you can create an Audio object and play a sound file
-      const audio = new Audio('sound-effect.mp3');
-      audio.play();
-}
+      function selectPreviousItem() {
+        selectedIndex = (selectedIndex - 1 + numItems) % numItems;
+        updateCarousel();
+      }
 
       document.addEventListener('keydown', function(event) {
-      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft' || event.key === 'ArrowDown' || event.key === 'ArrowUp') {
-      playSoundEffect(); // Play the sound effect for all arrow keys.
-  }
+        if (event.keyCode === 39) { // Right arrow key
+          selectNextItem();
+        } else if (event.keyCode === 37) { // Left arrow key
+          selectPreviousItem();
+        }
+      });
     });
   </script>
 </body>
