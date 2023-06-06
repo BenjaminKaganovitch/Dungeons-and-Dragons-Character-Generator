@@ -38,13 +38,18 @@
     }
     
     .carousel-item.selected {
-      border-color: #fff;
+      border-color: gray;
     }
     
     .carousel-item img {
       max-height: 100%;
       max-width: 100%;
       object-fit: contain; /* Ensure all images appear the same size */
+      transition: filter 0.3s;
+    }
+    
+    .carousel-item.purple-filter img {
+      filter: brightness(1.2) saturate(1.5) hue-rotate(270deg); /* Apply purple filter to the image */
     }
   </style>
 </head>
@@ -77,6 +82,8 @@
       const numItems = carouselItems.length;
       const itemWidth = carouselItems[0].offsetWidth;
       let selectedIndex = 0;
+      let selectedItemId = null;
+      let selectedItems = [];
 
       function updateCarousel() {
         carouselContainer.style.transform = `translateX(-${selectedIndex * itemWidth}px)`;
@@ -92,8 +99,17 @@
         updateCarousel();
       }
 
-      function fadeSelectedImage() {
-        carouselItems[selectedIndex].classList.add('fade', 'fade-in');
+      function applyPurpleFilter() {
+        const selectedItem = carouselItems[selectedIndex];
+        selectedItem.classList.toggle('purple-filter');
+
+        if (selectedItem.classList.contains('purple-filter')) {
+          selectedItemId = selectedItem.id;
+          selectedItems.push(selectedItemId);
+        } else {
+          selectedItemId = null;
+          selectedItems = selectedItems.filter(id => id !== selectedItem.id);
+        }
       }
 
       function handleKeyDown(event) {
@@ -101,8 +117,13 @@
           selectNextItem();
         } else if (event.keyCode === 37) { // Left arrow key
           selectPreviousItem();
-        } else if (event.keyCode === 13) { // Enter key
-          fadeSelectedImage();
+        } else if (event.keyCode === 13 && selectedItemId === null) { // Enter key (if no item is currently selected)
+          applyPurpleFilter();
+        } else if (event.keyCode === 13 && selectedItemId !== null) { // Enter key (if an item is already selected)
+          const selectedItem = carouselItems[selectedIndex];
+          if (selectedItem.id === selectedItemId) {
+            applyPurpleFilter();
+          }
         }
       }
 
