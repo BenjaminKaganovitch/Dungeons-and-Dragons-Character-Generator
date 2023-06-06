@@ -30,4 +30,7 @@
     <_ContentIncludedByDefault Remove="Views\Leads\Edit.cshtml" />
     <_ContentIncludedByDefault Remove="Views\Leads\Index.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\img\" />
+  </ItemGroup>
 </Project>
