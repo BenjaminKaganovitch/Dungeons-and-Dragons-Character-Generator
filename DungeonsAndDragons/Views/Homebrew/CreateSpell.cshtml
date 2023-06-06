@@ -1,0 +1,60 @@
+@using DungeonsAndDragons.Domain
+@using DungeonsAndDragons.Services
+@model DungeonsAndDragons.Domain.Spell
+@{
+    ViewData["title"] = "Creating New Spell | D";
+    SelectList schools = new(DataService.MagicSchools);
+}
+<script type="text/javascript" defer src="js/spell-creator.js"></script>>
+
+<h1>Spell Creation</h1>
+<form method="post">
+    <label class="form-label" asp-for="Name"></label>
+    <input class="form-control" asp-for="Name" />
+    <span class="form-text text-danger" asp-validation-for="Name"></span>
+    
+    <div class="input-group">
+        <label class="input-group-text">Components</label>
+        <div class="form-check-inline">
+            <input class="form-check-input" type="checkbox" id="verbal" name="spellComponents" value="Verbal"/>
+            <label class="form-check-label" for="verbal">Verbal</label>
+        </div>
+        <div class="form-check-inline">
+            <input class="form-check-input" type="checkbox" id="somatic" name="spellComponents" value="Somatic"/>
+            <label class="form-check-label" for="somatic">Somatic</label>
+        </div>
+        <div class="form-check-inline">
+            <input class="form-check-input" type="checkbox" id="material" name="spellComponents" value="Material"/>
+            <label class="form-check-label" for="material">Material</label>
+        </div>
+    </div>
+    <div class="input-group d-none" id="material-container">
+        <label class="input-group-text">Casting material(s)</label>
+        <input type="text" class="form-control" id="casting-materials"/>
+    </div>
+    
+    <label class="form-label" asp-for="SpellType">Spell Type</label>
+    <select class="form-select" asp-for="SpellType" asp-items="Html.GetEnumSelectList<SpellType>()"></select>
+    
+    <label class="form-label" asp-for="MagicSchool"></label>
+    <select class="form-select" asp-for="MagicSchool" asp-items="schools"></select>
+    
+    <label class="form-label" asp-for="Range"></label>
+    <input class="form-control" asp-for="Range" />
+    <span class="form-text text-danger" asp-validation-for="Range"></span>
+    
+    <label class="form-label" asp-for="CastingTime"></label>
+    <input class="form-control" asp-for="CastingTime" />
+    <span class="form-text text-danger" asp-validation-for="CastingTime"></span>
+    
+    <label class="form-label" asp-for="Duration"></label>
+    <input class="form-control" asp-for="Duration" />
+    <span class="form-text text-danger" asp-validation-for="Duration"></span>
+    
+    
+    <label class="form-label" asp-for="Description"></label>
+    <textarea class="form-control" asp-for="Description"></textarea>
+    <span class="form-text text-danger" asp-validation-for="Description"></span>
+    
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
