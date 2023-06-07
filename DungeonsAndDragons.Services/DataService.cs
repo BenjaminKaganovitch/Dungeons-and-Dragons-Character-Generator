@@ -73,8 +73,35 @@ public class DataService : IDataService
             SingleOrDefault(c => c.Name == className)!.Spells;
     }
 
+    public Spell CreateHomebrewSpell(Spell spell)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Feat CreateHomebrewFeat(Feat feat)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Background CreateHomebrewBackground(BackgroundViewModel model)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Lineage CreateHomebrewLineage(Lineage lineage)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Sublineage CreateHomebrewSublineage(Sublineage sublineage)
+    {
+        throw new NotImplementedException();
+    }
+
     public IEnumerable<Spell> GetSpellsByLevel(SpellType type)
     {
         return _context.Spells.Where(s => s.SpellType == type);
     }
+    
+    
 }

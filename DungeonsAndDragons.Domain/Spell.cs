@@ -1,4 +1,5 @@
-﻿using DungeonsAndDragons.Identity;
+﻿using System.ComponentModel.DataAnnotations;
+using DungeonsAndDragons.Identity;
 
 namespace DungeonsAndDragons.Domain
 {
@@ -10,7 +11,9 @@ namespace DungeonsAndDragons.Domain
 		public string? CreatorId { get; set; }
 		public UserLeadEntity? Creator { get; set; }
 		public SpellType SpellType { get; set; }
+		[Display(Name = "School")]
 		public string MagicSchool { get; set; } = null!;
+		[Display(Name = "Casting Time")]
 		public string CastingTime { get; set; } = null!;
 		public string Range { get; set; } = null!;
 		public string Components { get; set; } = null!;
