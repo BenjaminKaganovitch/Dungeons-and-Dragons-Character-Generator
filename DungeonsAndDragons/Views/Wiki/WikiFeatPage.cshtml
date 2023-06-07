@@ -8,10 +8,5 @@
     {
             <p>Created by: <a asp-action="" asp-route-id="@Model.Creator.Id">@Model.Creator.UserName</a></p>
     }
-    @*<div>
-        @foreach(Spell spell in Model.Spells){
-            <p><a asp-action="WikiSpellPage" asp-route-id="@spell.Id">@spell.Name</a></p>
-        }
-    </div>*@
     <p>Source: @Model.Source</p>
 </div>
