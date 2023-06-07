@@ -39,7 +39,7 @@ namespace DungeonsAndDragons.Controllers
             {
                 return NotFound();
             }
-            Feat feat = _db.Feats.Include(f => f.Creator).Include(f => f.Spells).FirstOrDefault(f => f.Id == id);
+            Feat feat = _db.Feats.Include(f => f.Creator).FirstOrDefault(f => f.Id == id);
             if (feat == null)
             {
                 return NotFound();
