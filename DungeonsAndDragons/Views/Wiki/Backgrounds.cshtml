@@ -1,0 +1,8 @@
+﻿@using DungeonsAndDragons.Domain
+@model Background[]
+
+<ul>
+    @foreach(var b in Model){
+        <li><a asp-action="WikiBackgroundPage" asp-route-id="@b.Id">@b.Name</a></li>
+    }
+</ul>

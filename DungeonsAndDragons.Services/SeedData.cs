@@ -211,7 +211,7 @@ namespace DungeonsAndDragons.Services
                     CastingTime = "1 action",
                     Duration = "73 hours and 4 minutes",
                     Components = "Verbal (Yeet!), Somatic, Material (Some Item)",
-                    Description = "Makes any item, provided you are touching it, now accelerates toward your target for a long time. The item will experience 36% gravity. To clairify, this can be done to ANY item. At lower levels this spell will cause the item to follow the target, it will not atempt murder yet. at higher levels, the item will do blunt force whenever the target moves At Higher Levels. When you cast this spell using a spell slot of 5th level or higher, the damage is whatever your Dungeon Master has allowed based on the item used (Ex. small pin = 1d4, barrel = 3d4). Can only be \"Disabled\" by casting the spell on the effected object at a higher level on a defferent target."
+                    Description = "Makes any item, provided you are touching it, now accelerates toward your target for a long time. The item will experience 36% gravity. To clairify, this can be done to ANY item. At lower levels this spell will cause the item to follow the target, it will not atempt murder yet. at higher levels, the item will do blunt force whenever the target moves At Higher Levels. When you cast this spell using a spell slot of 5th level or higher, the damage is whatever your Dungeon Master has allowed based on the item used (Ex. small pin = 1d4, barrel = 3d4). Can only be \"Disabled\" by casting the spell on the effected object at a higher level on a different target."
                 };
                 Spell FutureSight = new()
                 {
