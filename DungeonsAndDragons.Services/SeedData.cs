@@ -38,13 +38,7 @@ namespace DungeonsAndDragons.Services
                     CastingTime = "1 action",
                     Duration = "Instantaneous",
                     Components = "Verbal, Somatic, Material (a tiny ball of bat guano and sulfur",
-                    Description = "A bright streak flashes from your pointing finger to a point you choose within range " +
-                                  "then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot " +
-                                  "radius must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed " +
-                                  "save, or half as much damage on a successful one. The fire spreads around corners. It" +
-                                  " ignites flammable objects in the area that aren’t being worn or carried.\n \n " +
-                                  "At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, " +
-                                  "the damage increases by 1d6 for each slot level above 3rd."
+                    Description = "A bright streak flashes from your pointing finger to a point you choose within range then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot radius must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one. The fire spreads around corners. It ignites flammable objects in the area that aren’t being worn or carried.\n \n At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd."
                 };
                 
                 Spell fireballFirstLevel = new()
@@ -57,13 +51,7 @@ namespace DungeonsAndDragons.Services
                     CastingTime = "1 action",
                     Duration = "Instantaneous",
                     Components = "Verbal, Somatic, Material (a tiny ball of bat guano and sulfur",
-                    Description = "A bright streak flashes from your pointing finger to a point you choose within range " +
-                                  "then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot " +
-                                  "radius must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed " +
-                                  "save, or half as much damage on a successful one. The fire spreads around corners. It" +
-                                  " ignites flammable objects in the area that aren’t being worn or carried.\n \n " +
-                                  "At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, " +
-                                  "the damage increases by 1d6 for each slot level above 3rd."
+                    Description = "A bright streak flashes from your pointing finger to a point you choose within range then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot radius must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one. The fire spreads around corners. It ignites flammable objects in the area that aren’t being worn or carried.\n \n At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd."
                 };
                 
                 Spell fireballSecondLevel = new()
@@ -76,13 +64,7 @@ namespace DungeonsAndDragons.Services
                     CastingTime = "1 action",
                     Duration = "Instantaneous",
                     Components = "Verbal, Somatic, Material (a tiny ball of bat guano and sulfur",
-                    Description = "A bright streak flashes from your pointing finger to a point you choose within range " +
-                                  "then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot " +
-                                  "radius must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed " +
-                                  "save, or half as much damage on a successful one. The fire spreads around corners. It" +
-                                  " ignites flammable objects in the area that aren’t being worn or carried.\n \n " +
-                                  "At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, " +
-                                  "the damage increases by 1d6 for each slot level above 3rd."
+                    Description = "A bright streak flashes from your pointing finger to a point you choose within range then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot radius must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one. The fire spreads around corners. It ignites flammable objects in the area that aren’t being worn or carried.\n \n At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd."
                 };
                 
                 Spell fireball = new()
@@ -95,13 +77,7 @@ namespace DungeonsAndDragons.Services
                     CastingTime = "1 action",
                     Duration = "Instantaneous",
                     Components = "Verbal, Somatic, Material (a tiny ball of bat guano and sulfur",
-                    Description = "A bright streak flashes from your pointing finger to a point you choose within range " +
-                                  "then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot " +
-                                  "radius must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed " +
-                                  "save, or half as much damage on a successful one. The fire spreads around corners. It" +
-                                  " ignites flammable objects in the area that aren’t being worn or carried.\n \n " +
-                                  "At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, " +
-                                  "the damage increases by 1d6 for each slot level above 3rd."
+                    Description = "A bright streak flashes from your pointing finger to a point you choose within range then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot radius must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one. The fire spreads around corners. It ignites flammable objects in the area that aren’t being worn or carried.\n \n At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd."
                 };
                 
                 Spell fireballFourthLevel = new()
@@ -114,13 +90,7 @@ namespace DungeonsAndDragons.Services
                     CastingTime = "1 action",
                     Duration = "Instantaneous",
                     Components = "Verbal, Somatic, Material (a tiny ball of bat guano and sulfur",
-                    Description = "A bright streak flashes from your pointing finger to a point you choose within range " +
-                                  "then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot " +
-                                  "radius must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed " +
-                                  "save, or half as much damage on a successful one. The fire spreads around corners. It" +
-                                  " ignites flammable objects in the area that aren’t being worn or carried.\n \n " +
-                                  "At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, " +
-                                  "the damage increases by 1d6 for each slot level above 3rd."
+                    Description = "A bright streak flashes from your pointing finger to a point you choose within range then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot radius must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one. The fire spreads around corners. It ignites flammable objects in the area that aren’t being worn or carried.\n \n At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd."
                 };
                 
                 Spell fireballFifthLevel = new()
@@ -198,7 +168,20 @@ namespace DungeonsAndDragons.Services
                                   "At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, " +
                                   "the damage increases by 1d6 for each slot level above 3rd."
                 };
-                
+
+                Spell SummonRock = new()
+                {
+                    Name = "Summon Cool Rock",
+                    Source = "Xnader's non existent guide to stuff",
+                    SpellType = SpellType.Cantrip,
+                    MagicSchool = "Evocation",
+                    Range = "100 feet",
+                    CastingTime = "1 action",
+                    Duration = "Instantaneous",
+                    Components = "Somatic",
+                    Description = "Summons a cool rock wherever you direct the spell."
+                };
+
                 Spell fireballNinthLevel = new()
                 {
                     Name = "Fireball",
@@ -217,7 +200,45 @@ namespace DungeonsAndDragons.Services
                                   "At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, " +
                                   "the damage increases by 1d6 for each slot level above 3rd."
                 };
-                
+
+                Spell Homing = new()
+                {
+                    Name = "Homing",
+                    Source = "Xnader's non existent guide to stuff",
+                    SpellType = SpellType.FourthLevel,
+                    MagicSchool = "Divination",
+                    Range = "Touch",
+                    CastingTime = "1 action",
+                    Duration = "73 hours and 4 minutes",
+                    Components = "Verbal (Yeet!), Somatic, Material (Some Item)",
+                    Description = "Makes any item, provided you are touching it, now accelerates toward your target for a long time. The item will experience 36% gravity. To clairify, this can be done to ANY item. At lower levels this spell will cause the item to follow the target, it will not atempt murder yet. at higher levels, the item will do blunt force whenever the target moves At Higher Levels. When you cast this spell using a spell slot of 5th level or higher, the damage is whatever your Dungeon Master has allowed based on the item used (Ex. small pin = 1d4, barrel = 3d4). Can only be \"Disabled\" by casting the spell on the effected object at a higher level on a defferent target."
+                };
+                Spell FutureSight = new()
+                {
+                    Name = "Forced Future Sight",
+                    Source = "Xnader's non existent guide to stuff",
+                    SpellType = SpellType.Cantrip,
+                    MagicSchool = "Divination",
+                    Range = "40 feet",
+                    CastingTime = "1 action",
+                    Duration = "10 minutes, 7 seconds and 465 miliseconds",
+                    Components = "Verbal, Somatic",
+                    Description = "Forces someone to see 6.1142 seconds into the future. Higher levels increase the distance into the future."
+                };
+
+                Spell FunnyBigLaserWeee = new()
+                {
+                    Name = "Big Laser Of Doom",
+                    Source = "Xnader's non existent guide to stuff",
+                    SpellType = SpellType.SeventhLevel,
+                    MagicSchool = "Evocation",
+                    Range = "Sight",
+                    CastingTime = "3 seconds",
+                    Duration = "2 seconds for laser, 2 days for effects",
+                    Components = "Verbal, Somatic, Material (1 full bottle of bat poop (Or some other flamable poop), bottle included)",
+                    Description = "Shoots a giant laser beam that does damage. Does 4d6 damage. Each higher level does an extra 2d6 damage. When attacking, roll 2d6, if you roll a total of 2, the target is turned into something random instead of being damaged."
+                };
+
                 #endregion
 
                 #region Feats
@@ -595,15 +616,140 @@ namespace DungeonsAndDragons.Services
                     }
                     
                 };
+                Class figther = new()
+                {
+                    Name = "Fightser",
+                    Source = "Basic Rules",
+                    Description = "Fighters share an unparalleled mastery with weapons and armor, and a thorough knowledge of the skills of combat. They are well acquainted with death, both meting it out and staring it defiantly in the face. You must have a Dexterity or Strength score of 13 or higher in order to multiclass in or out of this class.",
+                    HitDieType = DieType.TenSides,
+                    SubclassUnlockLevel = 2,
+                    Features = new List<Feature>()
+                    {
+                        new()
+                        {
+                            Name = "Archery",
+                            Description = "You gain a +2 bonus to attack rolls you make with\r\nranged weapons."
+                        },new()
+                        {
+                            Name = "Defense",
+                            Description = "While you are wearing armor, you gain a +1 bonus to AC."
+                        },new()
+                        {
+                            Name = "Dueling",
+                            Description = "When you are wielding a melee weapon in one hand and\r\nno other weapons, you gain a +2 bonus to damage rolls\r\nwith that weapon."
+                        },new()
+                        {
+                            Name = "Great Weapon Fighting\r\n",
+                            Description = "When you roll a 1 or 2 on a damage die for an attack you\r\nmake with a melee weapon that you are wielding with\r\ntwo hands, you can reroll the die and must use the new\r\nroll, even if the new roll is a 1 or a 2. The weapon must\r\nhave the two-handed or versatile property for you to gain\r\nthis benefit."
+                        },new()
+                        {
+                            Name = "Protection",
+                            Description = "When a creature you can see attacks a target other than\r\nyou that is within 5 feet of you, you can use your reaction\r\nto impose disadvantage on the attack roll. You must be\r\nwielding a shield."
+                        },new()
+                        {
+                            Name = "Two-Weapon Fighting\r\n",
+                            Description = "When you engage in two-weapon fighting, you can add\r\nyour ability modifier to the damage of the second attack."
+                        },
+                    },
+                    Subclasses = new List<Subclass>()
+                    {
+                        new()
+                        {
+                            Name = "Chapion",
+                            Source = "Player Handbook",
+                            Description = "The archetypal Champion focuses on the development of raw physical power honed to deadly perfection. Those who model themselves on this archetype combine rigorous training with physical excellence to deal devastating blows.",
+                            Features = new List<Feature>()
+                            {
+                                new()
+                                {
+                                    Name = "Improved Critical",
+                                    Description = "Beginning when you choose this archetype at 3rd level, your weapon attacks score a critical hit on a roll of 19 or 20.\r\n\r\n"
+                                },new()
+                                {
+                                    Name = "Remarkable Athlete\r\n",
+                                    Description = "Starting at 7th level, you can add half your proficiency bonus (rounded up) to any Strength, Dexterity, or Constitution check you make that doesn't already use your proficiency bonus.\r\n\r\nIn addition, when you make a running long jump, the distance you can cover increases by a number of feet equal to your Strength modifier."
+                                },new()
+                                {
+                                    Name = "Additional Fighting Style\r\n",
+                                    Description = "At 10th level, you can choose a second option from the Fighting Style class feature.\r\n\r\n"
+                                },new()
+                                {
+                                    Name = "Superior Critical\r\n",
+                                    Description = "Starting at 15th level, your weapon attacks score a critical hit on a roll of 18-20.\r\n\r\n"
+                                },new()
+                                {
+                                    Name = "Survivor",
+                                    Description = "At 18th level, you attain the pinnacle of resilience in battle. At the start of each of your turns, you regain hit points equal to 5 + your Constitution modifier if you have no more than half of your hit points left. You don't gain this benefit if you have 0 hit points.\r\n\r\n"
+                                }
+                            }
+                        }
+                    }
+
+                };
 
                 #endregion
-                
-                context.Spells.AddRange(fireballCantrip, fireballFirstLevel, fireballSecondLevel, 
-                                        fireball, fireballFourthLevel, fireballFifthLevel, fireballSixthLevel,
-                                        fireballSeventhLevel, fireballEighthLevel, fireballNinthLevel);
+
+                #region Backgrounds
+
+                Background failure = new()
+                {
+                    Name = "failure",
+                    Source = "Xnader's non existent guide to stuff",
+                    Description = "Previously in life, you have accomplished nothing your friends, family, or anyone else considered significant. You have lots of depression and sadness, and you can barely get by.",
+                    Features = new List<Feature>()
+                    {
+                        new Feature()
+                        {
+                            Name = "Desperation",
+                            Description = "You will do anything for money"
+                        }
+                    }
+                };
+                Background giftshopowner = new()
+                {
+                    Name = "Gift Shop Owner",
+                    Source = "Xnader's non existent guide to stuff",
+                    Description = "You have been a semi-successful buisness owner of a gift shop. You gained the ability to sell anything to anyone.",
+                    Features = new List<Feature>()
+                    {
+                        new Feature()
+                        {
+                            Name = "Salesman",
+                            Description = "You can swindle anyone into buying any item."
+                        }
+                    }
+                };
+                Background bm = new()
+                {
+                    Name = "Deserted Island Survivor",
+                    Source = "Xnader's non existent guide to stuff",
+                    Description = "You recently escaped a deserted island that you had lived on for many years. You gained a certain level of toughness and resourcefulness, but you find interpersonal interactions confusing and stressful.",
+                    Features = new List<Feature>()
+                    {
+                        new Feature()
+                        {
+                            Name = "Tough",
+                            Description = "Your time on the island has made you strong. you can take and deal more hits."
+                        },
+                        new Feature()
+                        {
+                            Name = "Resourceful",
+                            Description = "Your time on the island has made you use things to use everything you can."
+                        },new Feature()
+                        {
+                            Name = "Anti-Charisma",
+                            Description = "You find talking to others hard."
+                        }
+                    }
+                };
+
+                #endregion
+
+                context.Spells.AddRange(fireballCantrip,fireballFirstLevel,SummonRock,fireballSecondLevel,fireball,fireballFourthLevel,fireballFifthLevel,fireballSixthLevel,fireballSeventhLevel,fireballEighthLevel,fireballNinthLevel,Homing,FutureSight,FunnyBigLaserWeee);
                 context.Feats.AddRange(sentinel, lucky, alert);
                 context.Lineages.AddRange(human, dwarf);
-                context.Classes.Add(wizard);
+                context.Classes.AddRange(wizard,figther);
+                context.Backgrounds.AddRange(failure, giftshopowner, bm);
 
                 context.SaveChanges();
             }
