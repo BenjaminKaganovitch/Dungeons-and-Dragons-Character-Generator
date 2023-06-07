@@ -1,3 +1,147 @@
-﻿<h1>library</h1>
+﻿<style>
+    .container {
+        width: 80%;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-<h2>this page is under construction</h2>
+    .carousel {
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+        .carousel .row {
+            white-space: nowrap;
+            overflow-x: hidden;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            transition: transform 0.3s ease-in-out;
+            width: 80%;
+        }
+
+        .carousel .row.selected {
+            border: 2px solid blue;
+        }
+
+        .carousel .row img {
+            display: inline-block;
+            height: 80px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .carousel .row img.selected {
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .carousel .row img.previous {
+            transform: scale(0.9);
+            transition: transform 0.3s ease-in-out;
+        }
+   }
+</style>
+<h1>library</h1>
+
+<h2>Your characters</h2>
+
+<div class="carousel">
+    <div class="row selected">
+        <img src="AbstractProgram.jpg" alt="name">
+        <img src="AbstractProgram.jpg" alt="name">
+        <img src="AbstractProgram.jpg" alt="name">
+        <img src="random.jpg" alt="">
+    </div>>
+</div>
+<h2>Your Homebrews</h2>
+<div class="carousel">
+    <div class="row selected">
+        <img src="AbstractProgram.jpg" alt="name">
+        <img src="AbstractProgram.jpg" alt="name">
+        <img src="AbstractProgram.jpg" alt="name">
+        <img src="random.jpg" alt="">
+    </div>
+</div>
+
+
+<script>
+    const carousel = document.querySelector('.carousel');
+    const blackScreen = document.querySelector('.black-screen');
+    let activeRow = carousel.querySelector('.row.selected') || carousel.querySelector('.row:first-child');
+    let selectedImageIndex = 0;
+
+    // Update description on image selection
+    function updateDescription() {
+      const rowNumber = carousel.querySelectorAll('.row').indexOf(activeRow) + 1;
+      if (rowNumber === 1) {
+        blackScreen.textContent = 'Description for Row 1';
+      } else if (rowNumber === 2) {
+        blackScreen.textContent = 'Description for Row 2';
+      } else {
+        blackScreen.textContent = 'Default Description';
+      }
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'ArrowRight') {
+        // Scroll active row to the left
+        const images = activeRow.querySelectorAll('img');
+        images[selectedImageIndex].classList.remove('selected');
+        images[selectedImageIndex].classList.add('previous');
+        selectedImageIndex = (selectedImageIndex + 1) % images.length;
+        images[selectedImageIndex].classList.add('selected');
+        images[selectedImageIndex].classList.remove('previous');
+
+        // Scroll the row to bring the selected image into view
+        const selectedImage = images[selectedImageIndex];
+        const rowRect = activeRow.getBoundingClientRect();
+        const imageRect = selectedImage.getBoundingClientRect();
+        if (imageRect.right > rowRect.right) {
+          activeRow.scrollLeft += imageRect.right - rowRect.right;
+        } else if (imageRect.left < rowRect.left) {
+          activeRow.scrollLeft -= rowRect.left - imageRect.left;
+        }
+      } else if (event.key === 'ArrowLeft') {
+        // Scroll active row to the right
+        const images = activeRow.querySelectorAll('img');
+        images[selectedImageIndex].classList.remove('selected');
+        images[selectedImageIndex].classList.add('previous');
+        selectedImageIndex = (selectedImageIndex - 1 + images.length) % images.length;
+        images[selectedImageIndex].classList.add('selected');
+        images[selectedImageIndex].classList.remove('previous');
+
+        // Scroll the row to bring the selected image into view
+        const selectedImage = images[selectedImageIndex];
+        const rowRect = activeRow.getBoundingClientRect();
+        const imageRect = selectedImage.getBoundingClientRect();
+        if (imageRect.left < rowRect.left) {
+          activeRow.scrollLeft -= rowRect.left - imageRect.left;
+        } else if (imageRect.right > rowRect.right) {
+          activeRow.scrollLeft += imageRect.right - rowRect.right;
+        }
+      } else if (event.key === 'ArrowDown') {
+        // Switch to the next row
+        activeRow.classList.remove('selected');
+        activeRow = activeRow.nextElementSibling || carousel.querySelector('.row:first-child');
+        activeRow.classList.add('selected');
+        selectedImageIndex = 0; // Reset the selected image index when switching rows
+        const images = activeRow.querySelectorAll('img');
+        images[selectedImageIndex].classList.add('selected');
+        activeRow.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else if (event.key === 'ArrowUp') {
+        // Switch to the previous row
+        activeRow.classList.remove('selected');
+        activeRow = activeRow.previousElementSibling || carousel.querySelector('.row:last-child');
+        activeRow.classList.add('selected');
+        selectedImageIndex = 0;
+        const images = activeRow.querySelectorAll('img');
+        images[selectedImageIndex].classList.add('selected');
+        activeRow.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      // Update the description on image selection
+      updateDescription();
+    });
+</script>
