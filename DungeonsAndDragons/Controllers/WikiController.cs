@@ -88,6 +88,23 @@ namespace DungeonsAndDragons.Controllers
             return View(theclass);
         }
 
+        public IActionResult WikiBackgroundPage(int id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Background? background = _db.Backgrounds
+                .Include(b=>b.Creator)
+                .Include(b=>b.Features)
+                .FirstOrDefault(b => b.Id == id);
+            if (background == null)
+            {
+                return NotFound();
+            }
+            return View(background);
+        }
+
         public IActionResult Spells(string id)
         {
             try
@@ -108,7 +125,6 @@ namespace DungeonsAndDragons.Controllers
             }
 
         }
-
         public IActionResult Lineages()
         {
             return View(_db.Lineages.ToArray());
@@ -120,6 +136,10 @@ namespace DungeonsAndDragons.Controllers
         public IActionResult Feats()
         {
             return View(_db.Feats.ToArray());
+        }
+        public IActionResult Backgrounds()
+        {
+            return View(_db.Backgrounds.ToArray());
         }
     }
 }
