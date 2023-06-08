@@ -28,6 +28,7 @@ footer {
 
 .banner {
     height: 540px;
+    width: max-content;
     background: #ff0000 url("../img/herobanner.png") center center / cover no-repeat;
 }
 
