@@ -56,12 +56,53 @@ public class DataService : IDataService
         "Stealth",
         "Survival"
     };
+
+    public static readonly Dictionary<int, int> ProficiencyBonuses = new()
+    {
+        {1, 2}, {2, 2}, {3, 2}, {4, 2},
+        {5, 3}, {6, 3}, {7, 3}, {8, 3},
+        {9, 4}, {10, 4}, {11, 4}, {12, 4},
+        {13, 5}, {14, 5}, {15, 5}, {16, 5},
+        {17, 6}, {18, 6}, {19, 6}, {20, 6}
+    };
     
-    
+    public static readonly Dictionary<int, int> ScoreModifiers = new()
+    {
+        {1, -5}, {2, -4}, {3, -4}, {4, -3},
+        {5, -3}, {6, -2}, {7, -2}, {8, -1},
+        {9, -1}, {10, 0}, {11, 0}, {12, 1},
+        {13, 1}, {14, 2}, {15, 2}, {16, 3},
+        {17, 3}, {18, 4}, {19, 4}, {20, 5}
+    };
     
     public Class GetClassById(int id)
     {
-        return _context.Classes.SingleOrDefault(c => c.Id == id)!;
+        return _context.Classes.
+            SingleOrDefault(c => c.Id == id)!;
+    }
+
+    public Background GetBackgroundById(int id)
+    {
+        return _context.Backgrounds.
+            SingleOrDefault(background => background.Id == id)!;
+    }
+
+    public Feat GetFeatById(int id)
+    {
+        return _context.Feats.
+            SingleOrDefault(feat => feat.Id == id)!;
+    }
+
+    public Lineage GetLineageById(int id)
+    {
+        return _context.Lineages.
+            SingleOrDefault(lineage => lineage.Id == id)!;
+    }
+
+    public Spell GetSpellById(int id)
+    {
+        return _context.Spells.
+            SingleOrDefault(spell => spell.Id == id)!;
     }
 
     public IEnumerable<Spell> GetSpellsBySchool(string magicSchool)
@@ -75,6 +116,61 @@ public class DataService : IDataService
             SingleOrDefault(c => c.Name == className)!.Spells;
     }
 
+    public IEnumerable<Class> GetCastingClasses()
+    {
+        return _context.Classes.Where(c => c.CanCast);
+    }
+
+    public IEnumerable<Background> GetHomebrewBackgrounds()
+    {
+        return _context.Backgrounds.
+            Where(background => background.Source == "Housebrew" || background.Source == "Homebrew");
+    }
+
+    public IEnumerable<Spell> GetHomebrewSpells()
+    {
+        return _context.Spells.
+            Where(spell => spell.Source == "Housebrew" || spell.Source == "Homebrew");
+    }
+
+    public IEnumerable<Feat> GetHomebrewFeats()
+    {
+        return _context.Feats.
+            Where(feat => feat.Source == "Housebrew" || feat.Source == "Homebrew");
+    }
+
+    public IEnumerable<Background> GetUnapprovedHomebrewBackgrounds()
+    {
+        return _context.Backgrounds.
+            Where(background => background.Source == "Housebrew");
+    }
+
+    public IEnumerable<Spell> GetUnapprovedHomebrewSpells()
+    {
+        return _context.Spells.
+            Where(spell => spell.Source == "Housebrew");
+    }
+
+    public IEnumerable<Feat> GetUnapprovedHomebrewFeats()
+    {
+        return _context.Feats.
+            Where(feat => feat.Source == "Housebrew");    }
+
+    public IEnumerable<Background> GetApprovedHomebrewBackgrounds()
+    {
+        return _context.Backgrounds.
+            Where(background => background.Source == "Homebrew");    }
+
+    public IEnumerable<Spell> GetApprovedHomebrewSpells()
+    {
+        return _context.Spells.
+            Where(spell => spell.Source == "Homebrew");    }
+
+    public IEnumerable<Feat> GetApprovedHomebrewFeats()
+    {
+        throw new NotImplementedException();
+    }
+
     public IEnumerable<Spell> GetSpellsByLevel(SpellType type)
     {
         return _context.Spells.Where(s => s.SpellType == type);
@@ -82,13 +178,16 @@ public class DataService : IDataService
     
     public void CreateHomebrewSpell(Spell spell)
     {
-        _context.HomebrewSpells.Add(spell);
+        
+        _context.Spells.Add(spell);
         _context.SaveChanges();
     }
 
     public void CreateHomebrewFeat(Feat feat)
     {
-        _context.HomebrewFeats.Add(feat);
+        feat.Source = "Housebrew";
+        
+        _context.Feats.Add(feat);
         _context.SaveChanges();
     }
 
@@ -97,7 +196,8 @@ public class DataService : IDataService
         Background background = new()
         {
             Name = model.Name,
-            Description = model.Description
+            Description = model.Description,
+            Source = "Housebrew"
         };
 
         for (int i = 0; i < model.FeatureNames.Length; i++)
@@ -111,7 +211,7 @@ public class DataService : IDataService
             background.Features.Add(feature);
         }
 
-        _context.HomebrewBackgrounds.Add(background);
+        _context.Backgrounds.Add(background);
         _context.SaveChanges();
     }
 }

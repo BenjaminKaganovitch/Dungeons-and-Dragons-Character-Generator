@@ -1,5 +1,7 @@
 ﻿using DungeonsAndDragons.DataAccess;
+using DungeonsAndDragons.Domain;
 using DungeonsAndDragons.Identity;
+using DungeonsAndDragons.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,12 +11,14 @@ namespace DungeonsAndDragons.Controllers
 	{
 		private ApplicationDbContext _context;
 		private readonly UserManager<UserLeadEntity> _manager;
+		private DataService _service;
 
 		public HomebrewController(ApplicationDbContext context, 
-			UserManager<UserLeadEntity> manager)
+			UserManager<UserLeadEntity> manager, DataService service)
 		{
 			_context = context;
 			_manager = manager;
+			_service = service;
 		}
 
 		public IActionResult CreateHomebrew()
@@ -38,7 +42,7 @@ namespace DungeonsAndDragons.Controllers
 			return View();
 		}
 
-        public IActionResult ViewHomebrew()
+		public IActionResult ViewHomebrew()
         {
             return View();
         }
