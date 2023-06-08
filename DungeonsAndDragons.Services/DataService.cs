@@ -114,14 +114,4 @@ public class DataService : IDataService
         _context.HomebrewBackgrounds.Add(background);
         _context.SaveChanges();
     }
-
-    public void CreateHomebrewLineage(Lineage lineage)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void CreateHomebrewSublineage(Sublineage sublineage)
-    {
-        throw new NotImplementedException();
-    }
 }

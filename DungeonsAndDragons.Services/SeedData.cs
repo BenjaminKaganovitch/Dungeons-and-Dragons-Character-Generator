@@ -442,6 +442,7 @@ namespace DungeonsAndDragons.Services
                                   "contain their collected arcane knowledge, and they can specialize in specific " +
                                   "schools of magic or become versatile generalists.",
                     HitDieType = DieType.SixSides,
+                    CanCast = true,
                     SubclassUnlockLevel = 2,
                     Features = new List<Feature>()
                     {

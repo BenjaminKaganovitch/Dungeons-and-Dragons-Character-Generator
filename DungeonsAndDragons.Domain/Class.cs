@@ -12,6 +12,7 @@ namespace DungeonsAndDragons.Domain
 		public string Source { get; set; } = null!;
 		public DieType HitDieType { get; set; }
 		public int SubclassUnlockLevel { get; set; }
+		public bool CanCast { get; set; } = false;
 		public string Description { get; set; } = null!;
 		public ICollection<Feature> Features { get; set; } = new List<Feature>();
 		public ICollection<Spell> Spells { get; set; } = new List<Spell>();
