@@ -13,8 +13,4 @@ public interface IDataService
 	public void CreateHomebrewFeat(Feat feat);
 
 	public void CreateHomebrewBackground(BackgroundViewModel model);
-
-	public void CreateHomebrewLineage(Lineage lineage);
-
-	public void CreateHomebrewSublineage(Sublineage sublineage);
 }
