@@ -1,6 +1,6 @@
 ﻿@using DungeonsAndDragons.Domain
 @using DungeonsAndDragons.Services
-@model DungeonsAndDragons.Domain.Spell
+@model SpellCreatingModel
 @{
     ViewData["title"] = "Creating New Spell | D";
     SelectList schools = new(DataService.MagicSchools);
@@ -30,7 +30,7 @@
     </div>
     <div class="input-group d-none" id="material-container">
         <label class="input-group-text">Casting material(s)</label>
-        <input type="text" class="form-control" id="casting-materials" />
+        <input type="text" class="form-control" name="materials" id="casting-materials" />
     </div>
 
     <label class="form-label" asp-for="SpellType">Spell Type</label>
