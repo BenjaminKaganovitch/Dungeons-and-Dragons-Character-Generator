@@ -8,13 +8,13 @@ public interface IDataService
 	public IEnumerable<Spell> GetSpellsBySchool(string magicSchool);
 	public IEnumerable<Spell> GetSpellsByClass(string className);
 
-	public Spell CreateHomebrewSpell(Spell spell);
+	public void CreateHomebrewSpell(Spell spell);
 
-	public Feat CreateHomebrewFeat(Feat feat);
+	public void CreateHomebrewFeat(Feat feat);
 
-	public Background CreateHomebrewBackground(BackgroundViewModel model);
+	public void CreateHomebrewBackground(BackgroundViewModel model);
 
-	public Lineage CreateHomebrewLineage(Lineage lineage);
+	public void CreateHomebrewLineage(Lineage lineage);
 
-	public Sublineage CreateHomebrewSublineage(Sublineage sublineage);
+	public void CreateHomebrewSublineage(Sublineage sublineage);
 }

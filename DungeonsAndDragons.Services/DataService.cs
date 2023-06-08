@@ -57,6 +57,8 @@ public class DataService : IDataService
         "Survival"
     };
     
+    
+    
     public Class GetClassById(int id)
     {
         return _context.Classes.SingleOrDefault(c => c.Id == id)!;
@@ -73,35 +75,53 @@ public class DataService : IDataService
             SingleOrDefault(c => c.Name == className)!.Spells;
     }
 
-    public Spell CreateHomebrewSpell(Spell spell)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Feat CreateHomebrewFeat(Feat feat)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Background CreateHomebrewBackground(BackgroundViewModel model)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Lineage CreateHomebrewLineage(Lineage lineage)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Sublineage CreateHomebrewSublineage(Sublineage sublineage)
-    {
-        throw new NotImplementedException();
-    }
-
     public IEnumerable<Spell> GetSpellsByLevel(SpellType type)
     {
         return _context.Spells.Where(s => s.SpellType == type);
     }
     
-    
+    public void CreateHomebrewSpell(Spell spell)
+    {
+        _context.HomebrewSpells.Add(spell);
+        _context.SaveChanges();
+    }
+
+    public void CreateHomebrewFeat(Feat feat)
+    {
+        _context.HomebrewFeats.Add(feat);
+        _context.SaveChanges();
+    }
+
+    public void CreateHomebrewBackground(BackgroundViewModel model)
+    {
+        Background background = new()
+        {
+            Name = model.Name,
+            Description = model.Description
+        };
+
+        for (int i = 0; i < model.FeatureNames.Length; i++)
+        {
+            Feature feature = new()
+            {
+                Name = model.FeatureNames[i], 
+                Description = model.FeatureDescriptions[i]
+            };
+            
+            background.Features.Add(feature);
+        }
+
+        _context.HomebrewBackgrounds.Add(background);
+        _context.SaveChanges();
+    }
+
+    public void CreateHomebrewLineage(Lineage lineage)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void CreateHomebrewSublineage(Sublineage sublineage)
+    {
+        throw new NotImplementedException();
+    }
 }
