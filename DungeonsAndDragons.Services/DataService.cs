@@ -9,9 +9,9 @@ public class DataService : IDataService
 {
     private ApplicationDbContext _context;
 
-    public DataService(IServiceProvider provider)
+    public DataService(ApplicationDbContext context)
     {
-        _context = new(provider.GetRequiredService<DbContextOptions<ApplicationDbContext>>());
+        _context = context;
     }
     
     public static readonly string[] MagicSchools =
@@ -85,6 +85,8 @@ public class DataService : IDataService
     public Background GetBackgroundById(int id)
     {
         return _context.Backgrounds.
+            Include(background=>background.Creator).
+            Include(background=>background.Features).
             SingleOrDefault(background => background.Id == id)!;
     }
 
@@ -97,18 +99,28 @@ public class DataService : IDataService
     public Lineage GetLineageById(int id)
     {
         return _context.Lineages.
+            Include(l=>l.Creator).
+            Include(l => l.Sublineages).ThenInclude(s=>s.Features).
+            Include(l => l.Sublineages).ThenInclude(s => s.Spells).
+            Include(l => l.Sublineages).ThenInclude(s => s.StatBoosts).
+            Include(l => l.Sublineages).ThenInclude(s => s.Creator).
+            Include(l => l.StatBoosts).
+            Include(l => l.Features).
             SingleOrDefault(lineage => lineage.Id == id)!;
     }
 
     public Spell GetSpellById(int id)
     {
         return _context.Spells.
+            Include(spell => spell.Creator).
             SingleOrDefault(spell => spell.Id == id)!;
     }
 
     public IEnumerable<Spell> GetSpellsBySchool(string magicSchool)
     {
-        return _context.Spells.Where(s => s.MagicSchool == magicSchool);
+        return _context.Spells.
+            Include(spell => spell.Creator).
+            Where(s => s.MagicSchool == magicSchool);
     }
 
     public IEnumerable<Spell> GetSpellsByClass(string className)
@@ -131,6 +143,7 @@ public class DataService : IDataService
     public IEnumerable<Spell> GetHomebrewSpells()
     {
         return _context.Spells.
+            Include(spell => spell.Creator).
             Where(spell => spell.Source == "Housebrew" || spell.Source == "Homebrew");
     }
 
@@ -139,6 +152,22 @@ public class DataService : IDataService
         return _context.Feats.
             Where(feat => feat.Source == "Housebrew" || feat.Source == "Homebrew");
     }
+
+    public IEnumerable<Background> GetOfficialBackgrounds()
+    {
+        return _context.Backgrounds.
+            Where(background => background.Source != "Housebrew" && background.Source != "Homebrew");;
+    }
+
+    public IEnumerable<Spell> GetOfficialSpells()
+    {
+        return _context.Spells.
+            Where(spell => spell.Source != "Housebrew" && spell.Source != "Homebrew");    }
+
+    public IEnumerable<Feat> GetOfficialFeats()
+    {
+        return _context.Feats.
+            Where(feat => feat.Source != "Housebrew" && feat.Source != "Homebrew");    }
 
     public IEnumerable<Background> GetUnapprovedHomebrewBackgrounds()
     {
@@ -149,6 +178,7 @@ public class DataService : IDataService
     public IEnumerable<Spell> GetUnapprovedHomebrewSpells()
     {
         return _context.Spells.
+            Include(spell => spell.Creator).
             Where(spell => spell.Source == "Housebrew");
     }
 
@@ -165,11 +195,14 @@ public class DataService : IDataService
     public IEnumerable<Spell> GetApprovedHomebrewSpells()
     {
         return _context.Spells.
-            Where(spell => spell.Source == "Homebrew");    }
+            Include(spell => spell.Creator).
+            Where(spell => spell.Source == "Homebrew");    
+    }
 
     public IEnumerable<Feat> GetApprovedHomebrewFeats()
     {
-        throw new NotImplementedException();
+        return _context.Feats.
+            Where(feat => feat.Source == "Homebrew");
     }
 
     public IEnumerable<Spell> GetSpellsByLevel(SpellType type)
@@ -177,10 +210,23 @@ public class DataService : IDataService
         return _context.Spells.Where(s => s.SpellType == type);
     }
     
-    public void CreateHomebrewSpell(Spell spell)
+    public void CreateHomebrewSpell(SpellCreatingModel model, string creatorId, string components)
     {
+        Spell finishedSpell = new()
+        {
+            Name = model.Name,
+            Description = model.Description,
+            Range = model.Range,
+            Duration = model.Duration,
+            Components = components,
+            CreatorId = creatorId,
+            MagicSchool = model.MagicSchool,
+            SpellType = model.SpellType,
+            CastingTime = model.CastingTime,
+            Source = model.Source
+        };
         
-        _context.Spells.Add(spell);
+        _context.Spells.Add(finishedSpell);
         _context.SaveChanges();
     }
 

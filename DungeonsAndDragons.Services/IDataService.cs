@@ -1,3 +1,4 @@
+using System.Collections;
 using DungeonsAndDragons.Domain;
 
 namespace DungeonsAndDragons.Services;
@@ -19,13 +20,16 @@ public interface IDataService
 	public IEnumerable<Background> GetHomebrewBackgrounds();
 	public IEnumerable<Spell> GetHomebrewSpells();
 	public IEnumerable<Feat> GetHomebrewFeats();
+	public IEnumerable<Background> GetOfficialBackgrounds();
+	public IEnumerable<Spell> GetOfficialSpells();
+	public IEnumerable<Feat> GetOfficialFeats();
 	public IEnumerable<Background> GetUnapprovedHomebrewBackgrounds();
 	public IEnumerable<Spell> GetUnapprovedHomebrewSpells();
 	public IEnumerable<Feat> GetUnapprovedHomebrewFeats();
 	public IEnumerable<Background> GetApprovedHomebrewBackgrounds();
 	public IEnumerable<Spell> GetApprovedHomebrewSpells();
 	public IEnumerable<Feat> GetApprovedHomebrewFeats();
-	public void CreateHomebrewSpell(Spell spell);
+	public void CreateHomebrewSpell(SpellCreatingModel model, string components, string creatorId);
 	public void CreateHomebrewFeat(Feat feat);
 	public void CreateHomebrewBackground(BackgroundViewModel model);
 }
