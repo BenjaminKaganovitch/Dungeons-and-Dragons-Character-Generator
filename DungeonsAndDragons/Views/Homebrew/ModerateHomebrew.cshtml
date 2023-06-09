@@ -1,0 +1,18 @@
+@using DungeonsAndDragons.Domain
+@model DungeonsAndDragons.Services.ModerationViewModel
+@{
+    ViewData["Title"] = "Moderate Homebrew | D&D Infinity";
+}
+<h2>Backgrounds</h2>
+@foreach (Background background in Model.HomebrewBackgrounds)
+{
+    <div>
+        <a asp-controller="Wiki" asp-action="WikiBackgroundPage" asp-route-id="@background.Id">
+            @background.Name
+        </a>
+        |
+        <form>
+            <input type="hidden" name="backgroundId" value="@background.Id"/>
+        </form>
+    </div>
+}

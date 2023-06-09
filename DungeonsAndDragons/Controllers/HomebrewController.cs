@@ -11,13 +11,15 @@ namespace DungeonsAndDragons.Controllers
 	{
 		private ApplicationDbContext _context;
 		private readonly UserManager<UserLeadEntity> _manager;
-		private SignInManager<UserLeadEntity> _signInManager;
+    private SignInManager<UserLeadEntity> _signInManager;
+		private DataService _service;
 
 		public HomebrewController(ApplicationDbContext context, 
-			UserManager<UserLeadEntity> manager, SignInManager<UserLeadEntity> signin)
+			UserManager<UserLeadEntity> manager, DataService service, SignInManager<UserLeadEntity> signin)
 		{
 			_context = context;
 			_manager = manager;
+			_service = service;
 			_signInManager = signin;
 		}
 
@@ -76,7 +78,7 @@ namespace DungeonsAndDragons.Controllers
 			return View();
 		}
 
-        public IActionResult ViewHomebrew()
+		public IActionResult ViewHomebrew()
         {
             return View();
         }
