@@ -619,7 +619,7 @@ namespace DungeonsAndDragons.Services
                 };
                 Class figther = new()
                 {
-                    Name = "Fightser",
+                    Name = "Fighter",
                     Source = "Basic Rules",
                     Description = "Fighters share an unparalleled mastery with weapons and armor, and a thorough knowledge of the skills of combat. They are well acquainted with death, both meting it out and staring it defiantly in the face. You must have a Dexterity or Strength score of 13 or higher in order to multiclass in or out of this class.",
                     HitDieType = DieType.TenSides,
@@ -656,7 +656,7 @@ namespace DungeonsAndDragons.Services
                     {
                         new()
                         {
-                            Name = "Chapion",
+                            Name = "Champion",
                             Source = "Player Handbook",
                             Description = "The archetypal Champion focuses on the development of raw physical power honed to deadly perfection. Those who model themselves on this archetype combine rigorous training with physical excellence to deal devastating blows.",
                             Features = new List<Feature>()

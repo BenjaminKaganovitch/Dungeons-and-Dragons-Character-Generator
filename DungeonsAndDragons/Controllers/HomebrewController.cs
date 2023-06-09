@@ -28,16 +28,11 @@ namespace DungeonsAndDragons.Controllers
 			return View();
 		}
 
-		public IActionResult CreateSpell()
-		{
-			if (!User.Identity.IsAuthenticated)
-				return NotFound();
-			
-			return View();
-		}
-
 		public IActionResult SpellsHomebrew()
 		{
+			if (!User.Identity.IsAuthenticated)
+				return Forbid();
+			
 			return View();
 		}
 		[HttpPost]
