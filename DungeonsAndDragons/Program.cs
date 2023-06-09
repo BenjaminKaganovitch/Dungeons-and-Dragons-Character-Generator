@@ -22,7 +22,7 @@ namespace DungeonsAndDragons
                 b => b.MigrationsAssembly("DungeonsAndDragons")));
             builder.Services.AddDefaultIdentity<UserLeadEntity>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-
+            builder.Services.AddScoped<IDataService, DataService>();
             var app = builder.Build();
 
             using (var scope = app.Services.CreateScope())
@@ -30,6 +30,7 @@ namespace DungeonsAndDragons
                 var services = scope.ServiceProvider;
 
                 SeedData.Initialize(services);
+                
             }
 
             // Configure the HTTP request pipeline.

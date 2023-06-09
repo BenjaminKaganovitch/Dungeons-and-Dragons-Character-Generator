@@ -1,6 +1,7 @@
 using DungeonsAndDragons.DataAccess;
 using DungeonsAndDragons.Domain;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DungeonsAndDragons.Services;
 
@@ -8,9 +9,9 @@ public class DataService : IDataService
 {
     private ApplicationDbContext _context;
 
-    public DataService(ApplicationDbContext context)
+    public DataService(IServiceProvider provider)
     {
-        _context = context;
+        _context = new(provider.GetRequiredService<DbContextOptions<ApplicationDbContext>>());
     }
     
     public static readonly string[] MagicSchools =
