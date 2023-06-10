@@ -1,80 +1,165 @@
-﻿<h1>Character Creator</h1>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Carousel Example</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f1f1f1;
+        }
 
-<form method="post" asp-controller="Create" asp-action="CharacterCreator">
-	<div class="form-control">
-		<label for="Name">Name</label>
-		<input type="text" name="Name" id="Name" placeholder="Character name" />
-	</div>
+        .carousel {
+            position: relative;
+            height: 66vh;
+            width: 60%; /* Set the desired width of the carousel */
+            margin: 0 auto; /* Center the carousel horizontally */
+            overflow: hidden;
+        }
 
-	<div class="form-control">
-		<label for="Age">Age</label>
-		<input type="text" name="Age" id="Age" placeholder="Character age" />
-	</div>
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s;
+        }
 
-	<div class="form-control">
-		<label for="Height">Height</label>
-		<input type="text" name="Height" id="Height" placeholder="Character height" />
-	</div>
+        .carousel-item {
+            flex: 0 0 25%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ccc;
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
 
-	<div class="form-control">
-		<label for="Weight">Weight</label>
-		<input type="text" name="Weight" id="Weight" placeholder="Character weight" />
-	</div>
+            .carousel-item.selected {
+                border-color: gray;
+            }
 
-	<div class="form-control">
-		<label for="EyeColour">EyeColour</label>
-		<input type="text" name="EyeColour" id="EyeColour" placeholder="Character eye colour" />
-	</div>
+            .carousel-item img {
+                max-height: 100%;
+                max-width: 100%;
+                object-fit: contain; /* Ensure all images appear the same size */
+                transition: filter 0.3s;
+            }
 
-	<div class="form-control">
-		<label for="SkinColour">SkinColour</label>
-		<input type="text" name="SkinColour" id="SkinColour" placeholder="Character skin colour" />
-	</div>
+            .carousel-item.purple-filter img {
+                filter: brightness(1.2) saturate(1.5) hue-rotate(270deg); /* Apply purple filter to the image */
+            }
 
-	<div class="form-control">
-		<label for="HairColour">HairColour</label>
-		<input type="text" name="HairColour" id="HairColour" placeholder="Character hair colour" />
-	</div>
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("random.jpg");
+            background-size: cover;
+            filter: blur(5px);
+            z-index: -1;
+        }
 
-	<div class="form-control">
-		<label for="Backstory">Backstory</label>
-		<input type="text" name="Backstory" id="Backstory" placeholder="Character backstory" />
-	</div>
+        .carousel-description {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="carousel-description" id="carousel-description"></div>
+    <div class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-item" id="carousel-item-1">
+                <img src="DragonImage.jpg" alt="Dragon Image">
+            </div>
+            <div class="carousel-item" id="carousel-item-2">
+                <img src="DragonImage.jpg" alt="Dragon Image">
+            </div>
+            <div class="carousel-item" id="carousel-item-3">
+                <img src="DragonImage.jpg" alt="Dragon Image">
+            </div>
+            <div class="carousel-item" id="carousel-item-4">
+                <img src="DragonImage.jpg" alt="Dragon Image">
+            </div>
+            <div class="carousel-item" id="carousel-item-5">
+                <img src="DragonImage.jpg" alt="Dragon Image">
+            </div>
+            <!-- Add more carousel items as needed -->
+        </div>
+    </div>
 
-	<div class="form-control">
-		<label for="Personality">Personality</label>
-		<input type="text" name="Personality" id="Personality" placeholder="Character personality" />
-	</div>
 
-	<div class="form-control">
-		<label for="Ideals">Ideals</label>
-		<input type="text" name="Ideals" id="Ideals" placeholder="Character ideals" />
-	</div>
 
-	<div class="form-control">
-		<label for="Bonds">Bonds</label>
-		<input type="text" name="Bonds" id="Bonds" placeholder="Character bonds" />
-	</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const carouselContainer = document.querySelector('.carousel-container');
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const numItems = carouselItems.length;
+            const itemWidth = carouselItems[0].offsetWidth;
+            let selectedIndex = 0;
+            let selectedItemId = null;
+            let selectedItems = [];
 
-	<div class="form-control">
-		<label for="Flaws">Flaws</label>
-		<input type="text" name="Flaws" id="Flaws" placeholder="Character flaws" />
-	</div>
+            function updateCarousel() {
+                carouselContainer.style.transform = `translateX(-${selectedIndex * itemWidth}px)`;
+            }
 
-	<div class="form-control">
-		<label for="AppearanceDescription">Appearance Description</label>
-		<input type="text" name="AppearanceDescription" id="AppearanceDescription" placeholder="Character appearance" />
-	</div>
+            function selectNextItem() {
+                selectedIndex = (selectedIndex + 1) % numItems;
+                updateCarousel();
+            }
 
-	<div class="form-control">
-		<label for="AlliesAndOrganizations">Allies And Organizations</label>
-		<input type="text" name="AlliesAndOrganizations" id="AlliesAndOrganizations" placeholder="Character allies and organizations" />
-	</div>
+            function selectPreviousItem() {
+                selectedIndex = (selectedIndex - 1 + numItems) % numItems;
+                updateCarousel();
+            }
 
-	<div class="form-control">
-		<label for="AdditionalTraitsAndFeatures">Additional Traits And Features</label>
-		<input type="text" name="AdditionalTraitsAndFeatures" id="AdditionalTraitsAndFeatures" placeholder=" character traits and features" />
-	</div>
-	
-	
-</form>
+            function applyPurpleFilter() {
+                const selectedItem = carouselItems[selectedIndex];
+                selectedItem.classList.toggle('purple-filter');
+
+                if (selectedItem.classList.contains('purple-filter')) {
+                    selectedItemId = selectedItem.id;
+                    selectedItems.push(selectedItemId);
+                } else {
+                    selectedItemId = null;
+                    selectedItems = selectedItems.filter(id => id !== selectedItem.id);
+                }
+            }
+
+            function updateDescription() {
+                const descriptionElement = document.getElementById('carousel-description');
+                descriptionElement.textContent = selectedItemId ? `Selected Item: ${selectedItemId}` : '';
+            }
+
+            function handleKeyDown(event) {
+                if (event.keyCode === 39) { // Right arrow key
+                    selectNextItem();
+                } else if (event.keyCode === 37) { // Left arrow key
+                    selectPreviousItem();
+                } else if (event.keyCode === 13 && selectedItemId === null) { // Enter key (if no item is currently selected)
+                    applyPurpleFilter();
+                    updateDescription();
+                } else if (event.keyCode === 13 && selectedItemId !== null) { // Enter key (if an item is already selected)
+                    const selectedItem = carouselItems[selectedIndex];
+                    if (selectedItem.id === selectedItemId) {
+                        applyPurpleFilter();
+                        updateDescription();
+                    }
+                }
+            }
+
+            document.addEventListener('keydown', handleKeyDown);
+        });
+    </script>
+</body>
+</html>

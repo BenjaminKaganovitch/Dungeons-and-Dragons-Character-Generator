@@ -30,6 +30,13 @@
     <_ContentIncludedByDefault Remove="Views\Leads\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="wwwroot\img\" />
+    <Folder Include="Views\Homebrew\sorting\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\img\AbstractProgram.jpg" />
+    <None Include="wwwroot\img\CharacterSelectMenu.png" />
+    <None Include="wwwroot\img\DragonImage.jpg" />
+    <None Include="wwwroot\img\Profile.jfif" />
+    <None Include="wwwroot\img\random.jpg" />
   </ItemGroup>
 </Project>
