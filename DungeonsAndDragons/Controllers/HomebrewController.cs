@@ -54,17 +54,22 @@ namespace DungeonsAndDragons.Controllers
 			return View();
         }
 
-        public IActionResult CreateBackground()
-		{
-			if (!User.Identity.IsAuthenticated)
-				return NotFound();
-			
-			return View();
-		}
-
 		public IActionResult ViewHomebrew()
         {
             return View();
         }
-    }
+
+		public IActionResult BackgroundHomebrew()
+		{
+			if (!User.Identity.IsAuthenticated)
+				return NotFound();
+
+			return View();
+		}
+
+		public IActionResult FeatsHomebrew()
+		{
+			throw new NotImplementedException();
+		}
+	}
 }

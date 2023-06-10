@@ -225,6 +225,11 @@ public class DataService : IDataService
             CastingTime = model.CastingTime,
             Source = model.Source
         };
+
+        foreach (int id in model.ClassIds)
+        {
+            GetClassById(id).Spells.Add(finishedSpell);
+        }
         
         _context.Spells.Add(finishedSpell);
         _context.SaveChanges();
