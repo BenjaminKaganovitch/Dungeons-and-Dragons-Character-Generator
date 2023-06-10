@@ -15,7 +15,7 @@ namespace DungeonsAndDragons.Controllers
 		private IDataService _service;
 
 		public HomebrewController(ApplicationDbContext context, 
-			UserManager<UserLeadEntity> manager, DataService service, SignInManager<UserLeadEntity> signin)
+			UserManager<UserLeadEntity> manager, IDataService service, SignInManager<UserLeadEntity> signin)
 		{
 			_context = context;
 			_manager = manager;
