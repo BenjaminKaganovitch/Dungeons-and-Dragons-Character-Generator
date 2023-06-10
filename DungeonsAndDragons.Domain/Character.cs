@@ -28,21 +28,21 @@ namespace DungeonsAndDragons.Domain
 		public ICollection<Feat> Feats { get; set; } = new List<Feat>();
 
 		//Roleplay character info
-		public string Age { get; set; } = null!;
-		public string Height { get; set; } = null!;
-		public string Weight { get; set; } = null!;
-		public string EyeColour { get; set; } = null!;
-		public string SkinColour { get; set; } = null!;
-		public string HairColour { get; set; } = null!;
-		public string Backstory { get; set; } = null!;
-		public string Personality { get; set; } = null!;
-		public string Ideals { get; set; } = null!;
-		public string Bonds { get; set; } = null!;
-		public string Flaws { get; set; } = null!;
-		public string AppearanceDescription { get; set; } = null!;
-		public string AlliesAndOrganizations { get; set; } = null!;
-		public string AdditionalTraitsAndFeatures { get; set; } = null!;
-		public string Treasure { get; set; } = null!;
+		public string? Age { get; set; }
+		public string? Height { get; set; }
+		public string? Weight { get; set; }
+		public string? EyeColour { get; set; }
+		public string? SkinColour { get; set; }
+		public string? HairColour { get; set; }
+		public string? Backstory { get; set; }
+		public string? Personality { get; set; }
+		public string? Ideals { get; set; }
+		public string? Bonds { get; set; }
+		public string? Flaws { get; set; }
+		public string? AppearanceDescription { get; set; }
+		public string? AlliesAndOrganizations { get; set; }
+		public string? AdditionalTraitsAndFeatures { get; set; }
+		public string? Treasure { get; set; }
 		public ICollection<Language> Languages { get; set; } = new List<Language>();
 
 		public int TotalLevels() 

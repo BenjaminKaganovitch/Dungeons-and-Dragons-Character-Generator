@@ -13,6 +13,40 @@
         |
         <form>
             <input type="hidden" name="backgroundId" value="@background.Id"/>
+            <input type="hidden" name="type" value="Background"/>
+            <button type="submit" class="btn btn-success">Approve</button>
+        </form>
+    </div>
+}
+
+<h2>Spells</h2>
+@foreach (Spell spell in Model.HomebrewSpells)
+{
+    <div>
+        <a asp-controller="Wiki" asp-action="WikiSpellPage" asp-route-id="@spell.Id">
+            @spell.Name
+        </a>
+        |
+        <form>
+            <input type="hidden" name="backgroundId" value="@spell.Id"/>
+            <input type="hidden" name="type" value="Spell"/>
+            <button type="submit" class="btn btn-success">Approve</button>
+        </form>
+    </div>
+}
+
+<h2>Feats</h2>
+@foreach (Feat feat in Model.HomebrewFeats)
+{
+    <div>
+        <a asp-controller="Wiki" asp-action="WikiFeatPage" asp-route-id="@feat.Id">
+            @feat.Name
+        </a>
+        |
+        <form>
+            <input type="hidden" name="backgroundId" value="@feat.Id"/>
+            <input type="hidden" name="type" value="Feat"/>
+            <button type="submit" class="btn btn-success">Approve</button>
         </form>
     </div>
 }
