@@ -29,7 +29,7 @@ public interface IDataService
 	public IEnumerable<Background> GetApprovedHomebrewBackgrounds();
 	public IEnumerable<Spell> GetApprovedHomebrewSpells();
 	public IEnumerable<Feat> GetApprovedHomebrewFeats();
-	public void CreateHomebrewSpell(SpellCreatingModel model, string components, string creatorId);
-	public void CreateHomebrewFeat(Feat feat);
-	public void CreateHomebrewBackground(BackgroundViewModel model);
+	public Spell CreateHomebrewSpell(SpellCreatingModel model, string components, string creatorId);
+	public Feat CreateHomebrewFeat(FeatCreatingModel model, string creatorId);
+	public Background CreateHomebrewBackground(BackgroundCreatingModel model, string creatorId);
 }

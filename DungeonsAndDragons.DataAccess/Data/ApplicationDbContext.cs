@@ -43,12 +43,5 @@ namespace DungeonsAndDragons.DataAccess
 		public DbSet<Spell> Spells { get; set; }
 		public DbSet<Feat> Feats { get; set; }
 		public DbSet<Language> Languages { get; set; }
-		//Homebrew
-		public DbSet<Spell> HomebrewSpells { get; set; }
-		public DbSet<Feat> HomebrewFeats { get; set; }
-		public DbSet<Lineage> HomebrewLineages { get; set; }
-		public DbSet<Sublineage> HomebrewSublineages { get; set; }
-		public DbSet<Subclass> HomebrewSubclasses { get; set; }
-		public DbSet<Background> HomebrewBackgrounds { get; set; }
 	}
 }

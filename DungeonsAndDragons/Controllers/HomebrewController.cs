@@ -9,15 +9,13 @@ namespace DungeonsAndDragons.Controllers
 {
 	public class HomebrewController : Controller
 	{
-		private ApplicationDbContext _context;
 		private readonly UserManager<UserLeadEntity> _manager;
 		private SignInManager<UserLeadEntity> _signInManager;
 		private IDataService _service;
 
-		public HomebrewController(ApplicationDbContext context, 
-			UserManager<UserLeadEntity> manager, IDataService service, SignInManager<UserLeadEntity> signin)
+		public HomebrewController(UserManager<UserLeadEntity> manager, IDataService service, 
+			SignInManager<UserLeadEntity> signin)
 		{
-			_context = context;
 			_manager = manager;
 			_service = service;
 			_signInManager = signin;
@@ -35,6 +33,7 @@ namespace DungeonsAndDragons.Controllers
 			
 			return View();
 		}
+		
 		[HttpPost]
         public IActionResult SpellsHomebrew(SpellCreatingModel model, string[] spellComponents, string? materials)
         {
@@ -47,11 +46,12 @@ namespace DungeonsAndDragons.Controllers
 					c = $"{c}({materials})";
 				}
 				
-				_service.CreateHomebrewSpell(model, _manager.GetUserId(User), c);
-		        
+				Spell spell = _service.CreateHomebrewSpell(model, c, _manager.GetUserId(User));
+
+				return RedirectToAction("WikiSpellPage", "Wiki", new {id = spell.Id});
 	        }
 	        
-			return View();
+			return SpellsHomebrew();
         }
 
 		public IActionResult ViewHomebrew()
@@ -62,14 +62,43 @@ namespace DungeonsAndDragons.Controllers
 		public IActionResult BackgroundHomebrew()
 		{
 			if (!User.Identity.IsAuthenticated)
-				return NotFound();
+				return Forbid();
 
 			return View();
 		}
 
+		[HttpPost]
+		public IActionResult BackgroundHomebrew(BackgroundCreatingModel model)
+		{
+			if (ModelState.IsValid)
+			{
+				Background background = _service.CreateHomebrewBackground(model, _manager.GetUserId(User));
+
+				return RedirectToAction("WikiBackgroundPage", "Wiki", new {id = background.Id});
+			}
+
+			return BackgroundHomebrew();
+		}
+
 		public IActionResult FeatsHomebrew()
 		{
-			throw new NotImplementedException();
+			if (!User.Identity.IsAuthenticated)
+				return Forbid();
+
+			return View();
+		}
+		
+		[HttpPost]
+		public IActionResult FeatsHomebrew(FeatCreatingModel model)
+		{
+			if (ModelState.IsValid)
+			{
+				Feat feat = _service.CreateHomebrewFeat(model, _manager.GetUserId(User));
+
+				return RedirectToAction("WikiFeatPage", "Wiki", new {id = feat.Id});
+			}
+
+			return FeatsHomebrew();
 		}
 	}
 }
