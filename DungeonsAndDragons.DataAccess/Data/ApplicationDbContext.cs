@@ -7,6 +7,11 @@ namespace DungeonsAndDragons.DataAccess
 {
 	public class ApplicationDbContext : IdentityDbContext<UserLeadEntity>
 	{
+		public ApplicationDbContext()
+		{
+
+		}
+
 		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
 		{
 

@@ -16,21 +16,21 @@
     <div class="input-group">
         <label class="input-group-text">Components</label>
         <div class="form-check-inline">
-            <input class="form-check-input" type="checkbox" id="verbal" asp-for="verbal"/>
+            <input class="form-check-input" type="checkbox" id="verbal" asp-for="Verbal"/>
             <label class="form-check-label" for="verbal">Verbal</label>
         </div>
         <div class="form-check-inline">
-            <input class="form-check-input" type="checkbox" id="somatic" asp-for="somatic"/>
+            <input class="form-check-input" type="checkbox" id="somatic" asp-for="Somatic"/>
             <label class="form-check-label" for="somatic">Somatic</label>
         </div>
         <div class="form-check-inline">
-            <input class="form-check-input" type="checkbox" id="material" asp-for="material"/>
+            <input class="form-check-input" type="checkbox" id="material" asp-for="Material"/>
             <label class="form-check-label" for="material">Material</label>
         </div>
     </div>
     <div class="input-group d-none" id="material-container">
         <label class="input-group-text">Casting material(s)</label>
-        <input type="text" class="form-control" asp-for="materials" id="casting-materials" />
+        <input type="text" class="form-control" asp-for="Materials" id="casting-materials" />
     </div>
 
     <label class="form-label" asp-for="SpellType">Spell Type</label>
@@ -60,7 +60,7 @@
         @foreach (Class c in Model.CastingClassList)
         {
             <div class="form-check-inline">
-                <input class="form-check-input" type="checkbox" id="@c.Name" for="Classes" value="@c.Id" />
+                <input class="form-check-input" type="checkbox" id="@c.Name" name="Classes" value="@c.Id" />
                 <label class="form-check-label" for="@c.Name">@c.Name</label>
             </div>
         }
