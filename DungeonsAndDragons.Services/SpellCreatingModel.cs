@@ -11,6 +11,7 @@ namespace DungeonsAndDragons.Services
 {
     public class SpellCreatingModel
     {
+        public Dictionary<string, int>? CastingClassList { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
 
@@ -26,5 +27,7 @@ namespace DungeonsAndDragons.Services
         public string CastingTime { get; set; } = null!;
         public string Range { get; set; } = null!;
         public string Duration { get; set; } = null!;
+        
+        public int[] ClassIds { get; set; }
     }
 }

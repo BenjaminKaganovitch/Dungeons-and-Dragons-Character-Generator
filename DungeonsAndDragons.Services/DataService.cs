@@ -7,11 +7,11 @@ namespace DungeonsAndDragons.Services;
 
 public class DataService : IDataService
 {
-    private ApplicationDbContext _context;
+    private IRepository _repository;
 
-    public DataService(ApplicationDbContext context)
+    public DataService(IRepository repository)
     {
-        _context = context;
+        _repository = repository;
     }
     
     public static readonly string[] MagicSchools =
@@ -78,139 +78,127 @@ public class DataService : IDataService
     
     public Class GetClassById(int id)
     {
-        return _context.Classes.
+        return _repository.GetClasses().
             SingleOrDefault(c => c.Id == id)!;
     }
 
     public Background GetBackgroundById(int id)
     {
-        return _context.Backgrounds.
-            Include(background=>background.Creator).
-            Include(background=>background.Features).
+        return _repository.GetBackgrounds().
             SingleOrDefault(background => background.Id == id)!;
     }
 
     public Feat GetFeatById(int id)
     {
-        return _context.Feats.
+        return _repository.GetFeats().
             SingleOrDefault(feat => feat.Id == id)!;
     }
 
     public Lineage GetLineageById(int id)
     {
-        return _context.Lineages.
-            Include(l=>l.Creator).
-            Include(l => l.Sublineages).ThenInclude(s=>s.Features).
-            Include(l => l.Sublineages).ThenInclude(s => s.Spells).
-            Include(l => l.Sublineages).ThenInclude(s => s.StatBoosts).
-            Include(l => l.Sublineages).ThenInclude(s => s.Creator).
-            Include(l => l.StatBoosts).
-            Include(l => l.Features).
+        return _repository.GetLineages().
             SingleOrDefault(lineage => lineage.Id == id)!;
     }
 
     public Spell GetSpellById(int id)
     {
-        return _context.Spells.
-            Include(spell => spell.Creator).
+        return _repository.GetSpells().
             SingleOrDefault(spell => spell.Id == id)!;
     }
 
     public IEnumerable<Spell> GetSpellsBySchool(string magicSchool)
     {
-        return _context.Spells.
-            Include(spell => spell.Creator).
+        return _repository.GetSpells().
             Where(s => s.MagicSchool == magicSchool);
     }
 
     public IEnumerable<Spell> GetSpellsByClass(string className)
     {
-        return _context.Classes.Include(c => c.Spells).
+        return _repository.GetClasses().
             SingleOrDefault(c => c.Name == className)!.Spells;
     }
 
     public IEnumerable<Class> GetCastingClasses()
     {
-        return _context.Classes.Where(c => c.CanCast);
+        return _repository.GetClasses().
+            Where(c => c.CanCast);
     }
 
     public IEnumerable<Background> GetHomebrewBackgrounds()
     {
-        return _context.Backgrounds.
+        return _repository.GetBackgrounds().
             Where(background => background.Source == "Housebrew" || background.Source == "Homebrew");
     }
 
     public IEnumerable<Spell> GetHomebrewSpells()
     {
-        return _context.Spells.
-            Include(spell => spell.Creator).
+        return _repository.GetSpells().
             Where(spell => spell.Source == "Housebrew" || spell.Source == "Homebrew");
     }
 
     public IEnumerable<Feat> GetHomebrewFeats()
     {
-        return _context.Feats.
+        return _repository.GetFeats().
             Where(feat => feat.Source == "Housebrew" || feat.Source == "Homebrew");
     }
 
     public IEnumerable<Background> GetOfficialBackgrounds()
     {
-        return _context.Backgrounds.
+        return _repository.GetBackgrounds().
             Where(background => background.Source != "Housebrew" && background.Source != "Homebrew");;
     }
 
     public IEnumerable<Spell> GetOfficialSpells()
     {
-        return _context.Spells.
+        return _repository.GetSpells().
             Where(spell => spell.Source != "Housebrew" && spell.Source != "Homebrew");    }
 
     public IEnumerable<Feat> GetOfficialFeats()
     {
-        return _context.Feats.
+        return _repository.GetFeats().
             Where(feat => feat.Source != "Housebrew" && feat.Source != "Homebrew");    }
 
     public IEnumerable<Background> GetUnapprovedHomebrewBackgrounds()
     {
-        return _context.Backgrounds.
+        return GetHomebrewBackgrounds().
             Where(background => background.Source == "Housebrew");
     }
 
     public IEnumerable<Spell> GetUnapprovedHomebrewSpells()
     {
-        return _context.Spells.
-            Include(spell => spell.Creator).
+        return GetHomebrewSpells().
             Where(spell => spell.Source == "Housebrew");
     }
 
     public IEnumerable<Feat> GetUnapprovedHomebrewFeats()
     {
-        return _context.Feats.
+        return GetHomebrewFeats().
             Where(feat => feat.Source == "Housebrew");    }
 
     public IEnumerable<Background> GetApprovedHomebrewBackgrounds()
     {
-        return _context.Backgrounds.
+        return GetHomebrewBackgrounds().
             Where(background => background.Source == "Homebrew");    }
 
     public IEnumerable<Spell> GetApprovedHomebrewSpells()
     {
-        return _context.Spells.
-            Include(spell => spell.Creator).
+        return GetHomebrewSpells().
             Where(spell => spell.Source == "Homebrew");    
     }
 
     public IEnumerable<Feat> GetApprovedHomebrewFeats()
     {
-        return _context.Feats.
+        return GetHomebrewFeats().
             Where(feat => feat.Source == "Homebrew");
     }
 
-    public IEnumerable<Spell> GetSpellsByLevel(SpellType type)
+    public IEnumerable<Spell> GetSpellsByType(SpellType type)
     {
-        return _context.Spells.Where(s => s.SpellType == type);
+        return _repository.GetSpells().
+            Where(s => s.SpellType == type);
     }
     
-    public void CreateHomebrewSpell(SpellCreatingModel model, string creatorId, string components)
+    public Spell CreateHomebrewSpell(SpellCreatingModel model, string creatorId, string components)
     {
         Spell finishedSpell = new()
         {
@@ -225,26 +213,38 @@ public class DataService : IDataService
             CastingTime = model.CastingTime,
             Source = model.Source
         };
-        
-        _context.Spells.Add(finishedSpell);
-        _context.SaveChanges();
+
+        var classes = _repository.GetClasses().
+            Where(c => model.ClassIds.Contains(c.Id));
+
+        _repository.CreateSpell(finishedSpell, classes);
+
+        return finishedSpell;
     }
 
-    public void CreateHomebrewFeat(Feat feat)
+    public Feat CreateHomebrewFeat(FeatCreatingModel model, string creatorId)
     {
-        feat.Source = "Housebrew";
+        Feat feat = new()
+        {
+            Source = "Housebrew",
+            Name = model.Name,
+            Description = model.Description,
+            CreatorId = creatorId
+        };
         
-        _context.Feats.Add(feat);
-        _context.SaveChanges();
+        _repository.CreateFeat(feat);
+
+        return feat;
     }
 
-    public void CreateHomebrewBackground(BackgroundViewModel model)
+    public Background CreateHomebrewBackground(BackgroundCreatingModel model, string creatorId)
     {
         Background background = new()
         {
             Name = model.Name,
             Description = model.Description,
-            Source = "Housebrew"
+            Source = "Housebrew",
+            CreatorId = creatorId
         };
 
         for (int i = 0; i < model.FeatureNames.Length; i++)
@@ -258,7 +258,7 @@ public class DataService : IDataService
             background.Features.Add(feature);
         }
 
-        _context.Backgrounds.Add(background);
-        _context.SaveChanges();
+        _repository.CreateBackground(background);
+        return background;
     }
 }

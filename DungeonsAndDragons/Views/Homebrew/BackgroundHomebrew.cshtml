@@ -1,4 +1,4 @@
-﻿@model DungeonsAndDragons.Domain.Background
+﻿@model DungeonsAndDragons.Services.BackgroundCreatingModel
 
 <script defer type="text/javascript" src="js/feature-creator.js"></script>
 
@@ -11,14 +11,18 @@
     <label class="form-label" asp-for="Description"></label>
     <textarea class="form-control" asp-for="Description"></textarea>
     <span class="form-text text-danger" asp-validation-for="Description"></span>
-
+    
     <h2>Features</h2>
     <button class="btn btn-primary" id="add-button" type="button">Add feature</button>
     <div id="feature-list">
         <div id="feature-1">
-            <partial name="_CreateFeature" />
+            <label class="form-label" asp-for="FeatureNames">Feature Name</label>
+            <input class="form-control" asp-for="FeatureNames" type="text"/>
+            
+            <label class="form-label" asp-for="FeatureDescriptions">Feature Description</label>
+            <textarea class="form-control" asp-for="FeatureDescriptions"></textarea>
         </div>
     </div>
-
+    
     <button class="btn btn-primary" type="submit">Submit</button>
 </form>
