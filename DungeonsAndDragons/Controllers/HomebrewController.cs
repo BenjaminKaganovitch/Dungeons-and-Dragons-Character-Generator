@@ -46,14 +46,14 @@ namespace DungeonsAndDragons.Controllers
 	        if (ModelState.IsValid)
 	        {
 				List<string> sts = new();
-				if (model.verbal) sts.Add("Vocal");
-				if (model.somatic) sts.Add("Somatic");
-				if (model.material) sts.Add("Material");
+				if (model.Verbal) sts.Add("Vocal");
+				if (model.Somatic) sts.Add("Somatic");
+				if (model.Material) sts.Add("Material");
                 string c = string.Join(", ", sts);
 
-				if (model.material && model.materials != null)
+				if (model.Material && model.Materials != null)
 				{
-					c = $"{c}({model.materials})";
+					c = $"{c}({model.Materials})";
 				}
 				
 				Spell spell = _service.CreateHomebrewSpell(model, c, _manager.GetUserId(User));
