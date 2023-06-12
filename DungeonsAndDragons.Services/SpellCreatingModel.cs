@@ -30,9 +30,9 @@ namespace DungeonsAndDragons.Services
         
         public List<string> Classes { get; set; }
 
-        public bool verbal { get; set; }
-        public bool somatic { get; set; }
-        public bool material { get; set; }
-        public string materials { get; set; }
+        public bool Verbal { get; set; } = false;
+        public bool Somatic { get; set; } = false;
+        public bool Material { get; set; } = false;
+        public string? Materials { get; set; }
     }
 }
