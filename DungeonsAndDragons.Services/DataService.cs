@@ -215,7 +215,7 @@ public class DataService : IDataService
         };
 
         var classes = _repository.GetClasses().
-            Where(c => model.ClassIds.Contains(c.Id));
+            Where(c => model.Classes.Contains($"{c.Id}"));
 
         _repository.CreateSpell(finishedSpell, classes);
 

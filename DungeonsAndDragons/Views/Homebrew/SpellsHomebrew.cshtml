@@ -5,7 +5,7 @@
     ViewData["title"] = "Creating New Spell | D";
     SelectList schools = new(DataService.MagicSchools);
 }
-<script type="text/javascript" defer src="js/spell-creator.js"></script>>
+<script defer src="/js/spell-creator.js"></script>
 
 <h1>Spell Creation</h1>
 <form method="post">
@@ -16,21 +16,21 @@
     <div class="input-group">
         <label class="input-group-text">Components</label>
         <div class="form-check-inline">
-            <input class="form-check-input" type="checkbox" id="verbal" name="spellComponents" value="Verbal" />
+            <input class="form-check-input" type="checkbox" id="verbal" asp-for="verbal"/>
             <label class="form-check-label" for="verbal">Verbal</label>
         </div>
         <div class="form-check-inline">
-            <input class="form-check-input" type="checkbox" id="somatic" name="spellComponents" value="Somatic" />
+            <input class="form-check-input" type="checkbox" id="somatic" asp-for="somatic"/>
             <label class="form-check-label" for="somatic">Somatic</label>
         </div>
         <div class="form-check-inline">
-            <input class="form-check-input" type="checkbox" id="material" name="spellComponents" value="Material" />
+            <input class="form-check-input" type="checkbox" id="material" asp-for="material"/>
             <label class="form-check-label" for="material">Material</label>
         </div>
     </div>
     <div class="input-group d-none" id="material-container">
         <label class="input-group-text">Casting material(s)</label>
-        <input type="text" class="form-control" name="materials" id="casting-materials" />
+        <input type="text" class="form-control" asp-for="materials" id="casting-materials" />
     </div>
 
     <label class="form-label" asp-for="SpellType">Spell Type</label>
@@ -57,11 +57,11 @@
     <span class="form-text text-danger" asp-validation-for="Description"></span>
     
     <div>
-        @foreach ((string name, int id) in Model.CastingClassList)
+        @foreach (Class c in Model.CastingClassList)
         {
             <div class="form-check-inline">
-                <input class="form-check-input" type="checkbox" id="@name" asp-for="ClassIds" value="@id" />
-                <label class="form-check-label" asp-for="ClassIds">@name</label>
+                <input class="form-check-input" type="checkbox" id="@c.Name" for="Classes" value="@c.Id" />
+                <label class="form-check-label" for="@c.Name">@c.Name</label>
             </div>
         }
     </div>

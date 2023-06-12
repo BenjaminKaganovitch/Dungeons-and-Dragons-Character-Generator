@@ -6,7 +6,7 @@ namespace DungeonsAndDragons.Identity
 	{
 		public string FirstName { get; set; } = null!;
 		public string LastName { get; set; } = null!;
-		public string Mobile { get; set; } = null!;
-		public string AcceptedSources { get; set; } = null!;
+		//public string Mobile { get; set; } = null!;
+		//public string AcceptedSources { get; set; } = null!;
 	}
 }
