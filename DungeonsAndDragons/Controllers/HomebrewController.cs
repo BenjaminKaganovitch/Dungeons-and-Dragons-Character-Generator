@@ -28,22 +28,32 @@ namespace DungeonsAndDragons.Controllers
 
 		public IActionResult SpellsHomebrew()
 		{
+			IEnumerable<Class> castingClasses = _service.GetCastingClasses();
+			SpellCreatingModel model = new()
+			{
+				CastingClassList = castingClasses 
+			};
+
 			if (!User.Identity.IsAuthenticated)
 				return Forbid();
 			
-			return View();
+			return View(model);
 		}
 		
 		[HttpPost]
-        public IActionResult SpellsHomebrew(SpellCreatingModel model, string[] spellComponents, string? materials)
+        public IActionResult SpellsHomebrew(SpellCreatingModel model)
         {
 	        if (ModelState.IsValid)
 	        {
-				string c = string.Join(", ", spellComponents);
+				List<string> sts = new();
+				if (model.verbal) sts.Add("Vocal");
+				if (model.somatic) sts.Add("Somatic");
+				if (model.material) sts.Add("Material");
+                string c = string.Join(", ", sts);
 
-				if (materials != null)
+				if (model.material && model.materials != null)
 				{
-					c = $"{c}({materials})";
+					c = $"{c}({model.materials})";
 				}
 				
 				Spell spell = _service.CreateHomebrewSpell(model, c, _manager.GetUserId(User));
