@@ -2,6 +2,7 @@ using DungeonsAndDragons.Domain;
 using DungeonsAndDragons.DataAccess;
 using DungeonsAndDragons.Services;
 using Moq;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons.Testing
 {
@@ -24,7 +25,13 @@ namespace DungeonsAndDragons.Testing
         [TestMethod()]
         public void AddHomebrewBackgroundTest()
         {
+            
             Mock<ApplicationDbContext> context = new Mock<ApplicationDbContext>();
+            Mock<DbSet<Feature>> features = new();
+            Mock<DbSet<Background>> backgrounds = new();
+
+            context.Setup(c => c.Features).Returns(features.Object);
+
             Repository repo = new(context.Object);
             DataService service = new(repo);
 
@@ -47,7 +54,8 @@ namespace DungeonsAndDragons.Testing
             
             service.CreateHomebrewBackground(backgroundModel, "AAA");
             
-            Assert.AreEqual(1, service.GetHomebrewBackgrounds());
+            backgrounds.Verify(b => b.Add(It.IsAny<Background>()), Times.Once);
+            context.Verify(c => c.SaveChanges(), Times.Once);
         }
     }
 }
