@@ -57,5 +57,23 @@ namespace DungeonsAndDragons.Testing
             backgrounds.Verify(b => b.Add(It.IsAny<Background>()), Times.Once);
             context.Verify(c => c.SaveChanges(), Times.Once);
         }
+
+        [TestMethod()]
+
+        public void StatRollerTest()
+        {
+            Mock<ApplicationDbContext> context = new Mock<ApplicationDbContext>();
+            Mock<DbSet<Feature>> features = new();
+            Mock<DbSet<Background>> backgrounds = new();
+
+            context.Setup(c => c.Features).Returns(features.Object);
+
+            Repository repo = new(context.Object);
+            //DataService service = new(repo);
+
+            int roll = repo.GetStatRoll();
+
+            Assert.IsTrue(roll >= 3 && roll <= 18);
+        }
     }
 }
