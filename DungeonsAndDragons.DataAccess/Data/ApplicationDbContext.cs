@@ -32,21 +32,21 @@ namespace DungeonsAndDragons.DataAccess
 		}
 
 		//Regular
-		public DbSet<UserLeadEntity> Users { get; set; }
-		public DbSet<Character> Characters { get; set; }
-		public DbSet<Background> Backgrounds { get; set; }
-		public DbSet<Lineage> Lineages { get; set; }
-		public DbSet<Sublineage> Sublineages { get; set; }
-		public DbSet<Class> Classes { get; set; }
-		public DbSet<Subclass> Subclasses { get; set; }
-		public DbSet<CharacterClass> CharacterClasses { get; set; }
-		public DbSet<Skill> Skills { get; set; }
-		public DbSet<CharacterSkill> CharacterSkills { get; set; }
-		public DbSet<CharacterStat> CharacterStats { get; set; }
-		public DbSet<StatBoost> StatBoosts { get; set; }
-		public DbSet<Feature> Features { get; set; }
-		public DbSet<Spell> Spells { get; set; }
-		public DbSet<Feat> Feats { get; set; }
-		public DbSet<Language> Languages { get; set; }
+		public virtual DbSet<UserLeadEntity> Users { get; set; }
+		public virtual DbSet<Character> Characters { get; set; }
+		public virtual DbSet<Background> Backgrounds { get; set; }
+		public virtual DbSet<Lineage> Lineages { get; set; }
+		public virtual DbSet<Sublineage> Sublineages { get; set; }
+		public virtual DbSet<Class> Classes { get; set; }
+		public virtual DbSet<Subclass> Subclasses { get; set; }
+		public virtual DbSet<CharacterClass> CharacterClasses { get; set; }
+		public virtual DbSet<Skill> Skills { get; set; }
+		public virtual DbSet<CharacterSkill> CharacterSkills { get; set; }
+		public virtual DbSet<CharacterStat> CharacterStats { get; set; }
+		public virtual DbSet<StatBoost> StatBoosts { get; set; }
+		public virtual DbSet<Feature> Features { get; set; }
+		public virtual DbSet<Spell> Spells { get; set; }
+		public virtual DbSet<Feat> Feats { get; set; }
+		public virtual DbSet<Language> Languages { get; set; }
 	}
 }
